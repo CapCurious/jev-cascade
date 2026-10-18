@@ -6,7 +6,8 @@
 - Range checks: thresholds, costs, steps and limits outside their range end in one line naming the flag and the allowed range, exit 2.
 - Fail fast: 10 s HTTP timeout; after 3 consecutive failed calls the run stops with the last cause.
 - No clobber: `run --out` is written via a temp file then renamed; a failing run no longer truncates the previous file; an existing --out needs --force; `--stage2-timeout SECONDS` (default 60) bounds the stage-two command.
-- README: cost in short dated sentences with stage two priced separately and labeled an estimate, "no key, offline" on the demo line, `noul` defined at first use.
+- README: cost in short dated sentences with stage two priced separately and labeled an estimate, "no key, offline" on the demo line, `noul` and the 64k state cap defined at first use, the stage-two alias named with the model id it resolved to.
+- `run` writes to `run.jsonl` in the current folder by default (was the shipped `examples/run_live.jsonl`, which the no-clobber check would now refuse); the quickstart and cookbook write outside `examples/`.
 
 ## Unreleased, 2026-10-18 (iteration 1 of the quality loop)
 

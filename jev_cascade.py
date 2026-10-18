@@ -322,7 +322,7 @@ def cmd_run(args):
         stage2 = ReplayStageTwo(args.stage2_recorded or os.path.join(EXAMPLES, "recorded_stage2.json"))
         out_path = args.out or os.path.join(tempfile.mkdtemp(prefix="jev-cascade-"), "run_demo.jsonl")
     else:
-        out_path = args.out or os.path.join(EXAMPLES, "run_live.jsonl")
+        out_path = args.out or "run.jsonl"
         if os.path.exists(out_path) and not args.force:
             raise ValueError("{} exists; pass --force to overwrite".format(out_path))
         client = jev_client.LiveClient(model=model, key=jev_client.get_key())
@@ -472,7 +472,7 @@ def build_parser():
     r.add_argument("items", nargs="?", default=os.path.join(EXAMPLES, "tickets.jsonl"))
     r.add_argument("questions", nargs="?", default=os.path.join(EXAMPLES, "questions.json"))
     r.add_argument("policy", nargs="?", default=os.path.join(EXAMPLES, "policy.json"))
-    r.add_argument("--out", help="output JSONL (default examples/run_live.jsonl)")
+    r.add_argument("--out", help="output JSONL (default run.jsonl in the current folder)")
     r.add_argument("--force", action="store_true", help="overwrite an existing --out file")
     r.add_argument("--stage2", default=DEFAULT_STAGE2, help="stage-two command; the prompt goes to stdin "
                    "or replaces {prompt}")
