@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased, 2026-10-18 (iteration 2 of the quality loop)
+
+- Input validation: a missing file, a non-UTF8 file, a malformed JSONL line or a record missing a field ends in one "error: <path>:<line>: <what>" line and exit 2, never a traceback.
+- Range checks: thresholds, costs, steps and limits outside their range end in one line naming the flag and the allowed range, exit 2.
+- Fail fast: 10 s HTTP timeout; after 3 consecutive failed calls the run stops with the last cause.
+- No clobber: `run --out` is written via a temp file then renamed; a failing run no longer truncates the previous file; an existing --out needs --force; `--stage2-timeout SECONDS` (default 60) bounds the stage-two command.
+- README: cost in short dated sentences with stage two priced separately and labeled an estimate, "no key, offline" on the demo line, `noul` defined at first use.
+
 ## Unreleased, 2026-10-18 (iteration 1 of the quality loop)
 
 - README cut from 2,398 to about 1,100 words: first screen leads with the stage-two-stronger check and its measured verdict; cost per 1,000 and 100,000 tickets with the stage-two assumption, and a "nothing to host" line; the Jev section is shared word for word with the sibling kits.

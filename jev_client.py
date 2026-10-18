@@ -56,6 +56,55 @@ class JevError(RuntimeError):
         self.body = body
 
 
+class InputError(RuntimeError):
+    """A user-supplied input file could not be read or validated."""
+
+
+def read_jsonl(path, required=(), booleans=()):
+    """Read JSON objects from *path*, with consistent user-facing errors."""
+    rows = []
+    try:
+        fh = open(path, "r", encoding="utf-8")
+        with fh:
+            for number, line in enumerate(fh, 1):
+                if not line.strip():
+                    continue
+                try:
+                    row = json.loads(line)
+                except ValueError as exc:
+                    raise InputError("{}:{}: not valid JSON ({})".format(path, number, exc))
+                if not isinstance(row, dict):
+                    raise InputError("{}:{}: each line must be one JSON object".format(path, number))
+                missing = [field for field in required if field not in row]
+                if missing:
+                    raise InputError("{}:{}: missing required field '{}'".format(
+                        path, number, missing[0]))
+                for field in booleans:
+                    if field not in row:
+                        continue
+                    value = row[field]
+                    if isinstance(value, str) and value.lower() in ("true", "false"):
+                        row[field] = value.lower() == "true"
+                    elif not isinstance(value, bool):
+                        raise InputError("{}:{}: '{}' must be true or false".format(
+                            path, number, field))
+                labels = row.get("labels")
+                if isinstance(labels, dict):
+                    for field, value in labels.items():
+                        if isinstance(value, str) and value.lower() in ("true", "false"):
+                            labels[field] = value.lower() == "true"
+                        elif field in booleans and not isinstance(value, bool):
+                            raise InputError("{}:{}: label '{}' must be true or false".format(
+                                path, number, field))
+                rows.append(row)
+    except FileNotFoundError:
+        raise InputError("{}:0: file not found".format(path))
+    except UnicodeDecodeError as exc:
+        raise InputError("{}:{}: not UTF-8 text (bad byte at offset {})".format(
+            path, exc.start + 1, exc.start))
+    return rows
+
+
 def get_key():
     for name in ("JEV_API_KEY", "TYPESAFE_API_KEY"):
         value = os.environ.get(name, "").strip()
@@ -118,7 +167,7 @@ class _Counters(object):
 
 
 class LiveClient(_Counters):
-    def __init__(self, model="jev-latest", timeout=30, key=None):
+    def __init__(self, model="jev-latest", timeout=10, key=None):
         _Counters.__init__(self)
         self.model = model
         self.timeout = timeout

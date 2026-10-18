@@ -41,18 +41,19 @@ WARNING_TEXT = ("An independent test on shell commands found a Sonnet second sta
 # ---------------------------------------------------------------- files
 
 def load_json(path):
-    with open(path, "r", encoding="utf-8") as fh:
-        return json.load(fh)
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            return json.load(fh)
+    except FileNotFoundError:
+        raise jev_client.InputError("{}: file not found".format(path))
+    except UnicodeDecodeError as exc:
+        raise jev_client.InputError("{}: not UTF-8 text (bad byte at offset {})".format(path, exc.start))
+    except ValueError as exc:
+        raise jev_client.InputError("{}: not valid JSON ({})".format(path, exc))
 
 
-def load_jsonl(path):
-    rows = []
-    with open(path, "r", encoding="utf-8") as fh:
-        for line in fh:
-            line = line.strip()
-            if line:
-                rows.append(json.loads(line))
-    return rows
+def load_jsonl(path, required=()):
+    return jev_client.read_jsonl(path, required=required)
 
 
 def dump_json(path, data):
@@ -66,7 +67,15 @@ def dump_json(path, data):
 def bands_for(policy, qid):
     """(act, review) for a question, falling back to the community defaults."""
     entry = ((policy or {}).get("questions") or {}).get(qid) or {}
-    return float(entry.get("act", DEFAULT_ACT)), float(entry.get("review", DEFAULT_REVIEW))
+    try:
+        act = float(entry.get("act", DEFAULT_ACT))
+        review = float(entry.get("review", DEFAULT_REVIEW))
+    except (TypeError, ValueError):
+        raise ValueError("policy question '{}': act and review must be numbers in [0, 1]".format(qid))
+    if not (0.0 <= review <= act <= 1.0):
+        raise ValueError("policy question '{}': need 0 <= review <= act <= 1, got act={} review={}".format(
+            qid, act, review))
+    return act, review
 
 
 def score_levels(question):
@@ -234,13 +243,15 @@ class ReplayLatency(object):
 # ---------------------------------------------------------------- run
 
 def ask_stage_one(client, state, question_defs):
-    try:
-        return client.ask(state, question_defs)
-    except jev_client.JevError as exc:
-        if exc.status in (401, 403):
-            raise
-        time.sleep(1.0)
-        return client.ask(state, question_defs)
+    for attempt in range(3):
+        try:
+            return client.ask(state, question_defs)
+        except jev_client.JevError as exc:
+            if exc.status in (401, 403) or isinstance(client, jev_client.RecordedClient):
+                raise
+            if attempt == 2:
+                raise ValueError("3 calls in a row failed (last: {}); stopping".format(exc))
+            time.sleep(1.0)
 
 
 def run_item(item, ctx):
@@ -274,6 +285,13 @@ def run_item(item, ctx):
     ctx["rec2"].append({"id": item["id"], "raw": raw, "latency_s": round(lat2, 3)})
     fields, parse_error = parse_stage_two(raw, questions)
     row["stage2"], row["stage2_error"] = fields, error or parse_error
+    if row["stage2_error"] and not isinstance(ctx["stage2"], ReplayStageTwo):
+        ctx["stage2_failures"] = ctx.get("stage2_failures", 0) + 1
+        if ctx["stage2_failures"] >= 3:
+            raise ValueError("3 stage-two calls in a row failed (last: {}); stopping".format(
+                row["stage2_error"]))
+    else:
+        ctx["stage2_failures"] = 0
     row["latency_s"]["stage2"] = round(lat2, 3)
     if ctx["stage2_cost"] is not None:
         row["cost_usd"]["stage2"], row["cost_usd"]["stage2_note"] = ctx["stage2_cost"], "per call"
@@ -284,10 +302,18 @@ def run_item(item, ctx):
 
 
 def cmd_run(args):
-    items = load_jsonl(args.items)
-    if args.limit:
-        items = items[:args.limit]
     questions, policy = load_json(args.questions), load_json(args.policy)
+    if not isinstance(questions, dict):
+        raise jev_client.InputError("{}: questions must be a JSON object".format(args.questions))
+    if not isinstance(policy, dict) or not isinstance(policy.get("questions", {}), dict):
+        raise jev_client.InputError("{}: policy questions must be a JSON object".format(args.policy))
+    for qid in questions:
+        bands_for(policy, qid)
+    boolean_labels = tuple(qid for qid, question in questions.items()
+                           if isinstance(question, dict) and question.get("type") == "noul")
+    items = jev_client.read_jsonl(args.items, required=("id", "text"), booleans=boolean_labels)
+    if args.limit is not None:
+        items = items[:args.limit]
     model = args.model or policy.get("model") or "jev-latest"
     latency = None
     if args.demo:
@@ -296,15 +322,23 @@ def cmd_run(args):
         stage2 = ReplayStageTwo(args.stage2_recorded or os.path.join(EXAMPLES, "recorded_stage2.json"))
         out_path = args.out or os.path.join(tempfile.mkdtemp(prefix="jev-cascade-"), "run_demo.jsonl")
     else:
+        out_path = args.out or os.path.join(EXAMPLES, "run_live.jsonl")
+        if os.path.exists(out_path) and not args.force:
+            raise ValueError("{} exists; pass --force to overwrite".format(out_path))
         client = jev_client.LiveClient(model=model, key=jev_client.get_key())
         stage2 = (ReplayStageTwo(args.stage2_recorded) if args.stage2_recorded
-                  else LiveStageTwo(args.stage2))
-        out_path = args.out or os.path.join(EXAMPLES, "run_live.jsonl")
+                  else LiveStageTwo(args.stage2, args.stage2_timeout))
+    if args.demo and os.path.exists(out_path) and not args.force:
+        raise ValueError("{} exists; pass --force to overwrite".format(out_path))
     ctx = {"client": client, "latency": latency, "questions": questions, "policy": policy,
            "stage2": stage2, "stage2_limit": args.stage2_limit, "stage2_done": 0,
-           "stage2_cost": args.stage2_cost_per_call, "rec1": [], "rec2": []}
+           "stage2_cost": args.stage2_cost_per_call, "stage2_failures": 0, "rec1": [], "rec2": []}
     rows = []
-    with open(out_path, "w", encoding="utf-8") as fh:
+    folder = os.path.dirname(os.path.abspath(out_path))
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=folder,
+                                     prefix=os.path.basename(out_path) + ".", suffix=".part",
+                                     delete=False) as fh:
+        part_path = fh.name
         for i, item in enumerate(items):
             row = run_item(item, ctx)
             rows.append(row)
@@ -313,6 +347,7 @@ def cmd_run(args):
             if not args.demo and (i + 1) % 10 == 0:
                 print("  {}/{} items, {} escalated so far".format(
                     i + 1, len(items), sum(r["escalated"] for r in rows)), file=sys.stderr, flush=True)
+    os.replace(part_path, out_path)
     stamp = time.strftime("%Y-%m-%d")
     if args.record_stage1:
         dump_json(args.record_stage1, {"model": model, "recorded_on": stamp,
@@ -415,7 +450,7 @@ def report_lines(rows, source="output"):
 
 def cmd_report(args):
     path = args.path or os.path.join(EXAMPLES, "run_live.jsonl")
-    rows = load_jsonl(path)
+    rows = load_jsonl(path, required=("stage1",))
     if not rows:
         print("error: {} has no rows".format(path), file=sys.stderr)
         return 1
@@ -438,10 +473,13 @@ def build_parser():
     r.add_argument("questions", nargs="?", default=os.path.join(EXAMPLES, "questions.json"))
     r.add_argument("policy", nargs="?", default=os.path.join(EXAMPLES, "policy.json"))
     r.add_argument("--out", help="output JSONL (default examples/run_live.jsonl)")
+    r.add_argument("--force", action="store_true", help="overwrite an existing --out file")
     r.add_argument("--stage2", default=DEFAULT_STAGE2, help="stage-two command; the prompt goes to stdin "
                    "or replaces {prompt}")
     r.add_argument("--stage2-recorded", help="replay stage-two replies from this file instead of a command")
     r.add_argument("--stage2-limit", type=int, help="run stage two on at most this many escalated items")
+    r.add_argument("--stage2-timeout", type=float, default=STAGE2_TIMEOUT,
+                   help="seconds before stopping a stage-two command (default: 60)")
     r.add_argument("--stage2-cost-per-call", type=float, help="USD per stage-two call (default: not metered)")
     r.add_argument("--record-stage1", help="write a stage-one replay file from this run")
     r.add_argument("--record-stage2", help="write a stage-two replay file from this run")
@@ -457,6 +495,14 @@ def main(argv=None):
     args = build_parser().parse_args(argv)
     demo_stdout = io.StringIO() if args.demo else None
     try:
+        for field, value, minimum, text in (
+                ("--stage2-limit", getattr(args, "stage2_limit", None), 0, "0 or more"),
+                ("--limit", getattr(args, "limit", None), 1, "1 or more"),
+                ("--stage2-cost-per-call", getattr(args, "stage2_cost_per_call", None), 0, "0 or more"),
+                ("--stage2-timeout", getattr(args, "stage2_timeout", None), 0, "greater than 0")):
+            if value is not None and (not value >= minimum or
+                                      (field == "--stage2-timeout" and not value > 0)):
+                raise ValueError("{} must be {}".format(field, text))
         with contextlib.redirect_stdout(demo_stdout) if demo_stdout else contextlib.nullcontext():
             if args.demo:
                 print(jev_client.DEMO_LABEL)
@@ -479,6 +525,9 @@ def main(argv=None):
     except jev_client.JevError as exc:
         print("error: {}".format(exc), file=sys.stderr)
         return 2 if exc.status in (401, 403) or args.demo else 1
+    except (jev_client.InputError, ValueError) as exc:
+        print("error: {}".format(exc), file=sys.stderr)
+        return 2
     except (FileNotFoundError, KeyError) as exc:
         print("error: {}".format(exc), file=sys.stderr)
         return 1

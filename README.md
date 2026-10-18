@@ -11,7 +11,7 @@ export JEV_API_KEY=YOUR_KEY        # from console.typesafe.ai/keys; TYPESAFE_API
 python3 jev_cascade.py run examples/tickets.jsonl examples/questions.json examples/policy.json --model jev-1.13.0 --stage2-limit 40 --out examples/run_live.jsonl
 ```
 
-Stage one, measured 2026-10-18 on `jev-1.13.0` at the published $0.042 per million input tokens: 1,000 tickets cost about $0.029 and 3.2 minutes serial; 100,000 about $2.90 and 5.3 hours. Stage two is whatever model you point the command at; the kit prices it only through `--stage2-cost-per-call`. At the default policy about 567 of 1,000 tickets escalate; at claude sonnet's API list price for the measured token counts that is about $2.46 and 41 minutes serial per 1,000 tickets, about $246 and 68 hours per 100,000 (an estimate; the claude CLI is a subscription). Demo mode is free and offline. Live mode sends each ticket's text to TypeSafe and the escalated ones to your stage-two command.
+Stage one, measured 2026-10-18 on `jev-1.13.0` at the published $0.042 per million input tokens: 1,000 tickets cost about $0.029 and 3.2 minutes serial; 100,000 about $2.90 and 5.3 hours. Stage two is whatever model you point the command at; the kit prices it through `--stage2-cost-per-call`. At the default policy about 567 of 1,000 tickets escalate. Stage two alone on those, at claude sonnet's API list price, is about $2.46 and 41 minutes serial per 1,000 tickets, so about $246 and 68 hours per 100,000. An estimate: the claude CLI is a subscription. Demo mode is free and offline. Live mode sends each ticket's text to TypeSafe and the escalated ones to your stage-two command.
 
 Nothing to host: the [explainer](https://capcurious.github.io/jev-cascade/) is a static page on GitHub Pages and the kit runs locally; there is no browser playground because the Jev API rejects browser origins (a preflight from github.io answered 400 Disallowed CORS origin on 2026-10-18).
 
@@ -27,7 +27,7 @@ Python 3.10 or newer, standard library only: `git clone https://github.com/CapCu
 
 ## Threshold policy
 
-`examples/policy.json` (the shape `jev-threshold-lab` writes) sets `act` and `review` per question. The banded number is certainty, `max(p, 1 - p)`, for `noul`, so a confident no acts like a confident yes; for `choice` and `score` it is the returned confidence. At or above `act` an item is acted on, from `review` to `act` it goes to review, below `review` it escalates; act 0.85 and review 0.60 are a common starting point. Any question below act escalates the item, and stage two replaces only those answers; an invalid stage-two field keeps stage one. jev-threshold-lab fits them on your labeled data.
+`examples/policy.json` (the shape `jev-threshold-lab` writes) sets `act` and `review` per question. The banded number is certainty, `max(p, 1 - p)`, for `noul` (yes or no), so a confident no acts like a confident yes; for `choice` and `score` it is the returned confidence. At or above `act` an item is acted on, from `review` to `act` it goes to review, below `review` it escalates; act 0.85 and review 0.60 are a common starting point. Any question below act escalates the item, and stage two replaces only those answers; an invalid stage-two field keeps stage one. jev-threshold-lab fits them on your labeled data.
 
 ## Stage two
 
@@ -81,9 +81,9 @@ JEV_LIVE=1 python3 -m unittest discover -s tests      # also runs stage one live
 python3 examples/make_fixtures.py                     # regenerate fixtures (seeded)
 ```
 
-Expected last line: `OK (skipped=1)` in a git checkout, `OK (skipped=2)` in a downloaded tree. [EVAL.md](EVAL.md) rebuilds the numbers, [docs/HOW_IT_WAS_BUILT.md](docs/HOW_IT_WAS_BUILT.md) the method; `python3 tools/make_explainer_data.py` re-embeds the run into the explainer.
+Expected last line: `OK (skipped=1)` in a checkout, `OK (skipped=2)` in a downloaded tree. [EVAL.md](EVAL.md) rebuilds the numbers, [docs/HOW_IT_WAS_BUILT.md](docs/HOW_IT_WAS_BUILT.md) the method; `python3 tools/make_explainer_data.py` re-embeds the run into the explainer.
 
-Jev kits: [jev-threshold-lab](https://github.com/CapCurious/jev-threshold-lab) fits act and review lines per question; [jev-role-ranker](https://github.com/CapCurious/jev-role-ranker) ranks job postings and flags, never rejects.
+Jev kits: [jev-threshold-lab](https://github.com/CapCurious/jev-threshold-lab) fits act and review lines per question; [jev-role-ranker](https://github.com/CapCurious/jev-role-ranker) ranks job postings, flags, never rejects.
 
 ## License
 
