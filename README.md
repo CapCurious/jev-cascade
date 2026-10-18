@@ -1,7 +1,7 @@
 # jev-cascade
-Jev as a cheap first stage, a stronger model only on items it is unsure about, and a per-stage report of cost, latency, accuracy.
+TypeSafe's Jev decision model as a cheap first stage, a stronger model only on items it is unsure about, and a per-stage report of cost, latency, accuracy.
 
-Its check: is stage two actually stronger on the escalated items? Measured 2026-10-18 (n=120 synthetic tickets, `jev-1.13.0`, then claude CLI 2.1.286 `--model sonnet` on the 40 escalated): yes, narrowly, 137 of 160 field answers against stage one's 131.
+Its check: is stage two actually stronger on what it receives? Measured 2026-10-18 (n=120 synthetic tickets, `jev-1.13.0`, then claude CLI 2.1.286 `--model sonnet` on the 40 escalated): yes, narrowly, 137 of 160 answers (40 tickets, four questions each) against stage one's 131.
 
 ![jev-cascade demo: run, then report](docs/demo.gif)
 ## Quickstart
@@ -51,7 +51,7 @@ escalated items, all fields pooled: stage one 131/160 (81.9%), stage two 137/160
 ```
 (`python3 jev_cascade.py --demo` output, abridged; category and needs_human tie at 100%)
 
-Its lead of 6 came from sentiment and one urgent ticket; its median, 4.02 s, is about 21 times stage one's.
+Its lead came from sentiment and one urgent ticket; its median, 4.02 s, is 21 times stage one's.
 
 Tuning a band reruns no inference: `examples/policy_tuned.json` sets sentiment to act 0.60, review 0.55 and replays the recorded responses:
 
@@ -70,7 +70,7 @@ Escalated 46 (38.3%, tuned) against 68 (56.7%, unfitted default); end to end 422
 - Thresholds do not transfer across datasets or model versions; this policy is unfitted. Refit per question when the data, question text or model id changes, and pin a versioned id.
 - Calibration is a population property: one answer at 0.90 is not 90% likely to be right.
 - Stage-two cost is not metered (the claude CLI is a subscription); pass `--stage2-cost-per-call` if yours bills per call. Stage-two latency is wall time, startup included.
-- Text only (images are beta and not used). One request (the ticket text plus its questions, what Jev calls the state) is capped at 64k tokens.
+- Text only (images are beta and not used). One request (ticket text plus questions, what Jev calls the state) is capped at 64k tokens.
 - The comparison covers 40 tickets and one stage-two model, so it demonstrates the measurement only.
 
 ## Development
