@@ -1,17 +1,17 @@
 # jev-cascade
 Jev as a cheap first stage, a stronger model only on items it is unsure about, and a per-stage report of cost, latency, accuracy.
 
-The check this kit exists for: is stage two actually stronger on the escalated items? Measured 2026-10-18 (n=120 synthetic tickets, `jev-1.13.0`, then claude CLI 2.1.286 `--model sonnet` on n=40 escalated): yes, narrowly, 137 of 160 field answers against stage one's 131.
+Its check: is stage two actually stronger on the escalated items? Measured 2026-10-18 (n=120 synthetic tickets, `jev-1.13.0`, then claude CLI 2.1.286 `--model sonnet` on the 40 escalated): yes, narrowly, 137 of 160 field answers against stage one's 131.
 
 ![jev-cascade demo: run, then report](docs/demo.gif)
 ## Quickstart
 ```
-python3 jev_cascade.py --demo
+python3 jev_cascade.py --demo          # no key, offline
 export JEV_API_KEY=YOUR_KEY        # from console.typesafe.ai/keys; TYPESAFE_API_KEY also works
 python3 jev_cascade.py run examples/tickets.jsonl examples/questions.json examples/policy.json --model jev-1.13.0 --stage2-limit 40 --out examples/run_live.jsonl
 ```
 
-On `jev-1.13.0` at the published $0.042 per million input tokens, stage one on 1,000 tickets costs about $0.029 and 3.2 minutes serial, and on 100,000 about $2.90 and 5.3 hours; stage two is whatever model you point the command at: at the default policy about 567 of 1,000 tickets escalate, about $2.46 at the measured claude CLI sonnet price and 41 minutes serial; demo mode is free and offline; live mode sends each ticket's text to TypeSafe and the escalated ones to your stage-two command.
+Stage one, measured 2026-10-18 on `jev-1.13.0` at the published $0.042 per million input tokens: 1,000 tickets cost about $0.029 and 3.2 minutes serial; 100,000 about $2.90 and 5.3 hours. Stage two is whatever model you point the command at; the kit prices it only through `--stage2-cost-per-call`. At the default policy about 567 of 1,000 tickets escalate; at claude sonnet's API list price for the measured token counts that is about $2.46 and 41 minutes serial per 1,000 tickets, about $246 and 68 hours per 100,000 (an estimate; the claude CLI is a subscription). Demo mode is free and offline. Live mode sends each ticket's text to TypeSafe and the escalated ones to your stage-two command.
 
 Nothing to host: the [explainer](https://capcurious.github.io/jev-cascade/) is a static page on GitHub Pages and the kit runs locally; there is no browser playground because the Jev API rejects browser origins (a preflight from github.io answered 400 Disallowed CORS origin on 2026-10-18).
 
@@ -23,7 +23,7 @@ The probability is the interface. Your code sets the threshold, so the same answ
 
 ## Install and commands
 
-Python 3.10 or newer, standard library only: `git clone https://github.com/CapCurious/jev-cascade && cd jev-cascade`, or `uvx --from git+https://github.com/CapCurious/jev-cascade jev-cascade --demo`. `run [ITEMS] [QUESTIONS] [POLICY]` writes one JSONL row per item (flags `--out`, `--model`, `--limit N`, `--stage2 "CMD"`, `--stage2-recorded`, `--stage2-limit N`, `--stage2-cost-per-call USD`, `--record-stage1`, `--record-stage2`). `report [OUTPUT]`, as in `python3 jev_cascade.py report examples/run_live.jsonl`, prints cost, latency and accuracy per stage plus the stronger-second-stage check.
+Python 3.10 or newer, standard library only: `git clone https://github.com/CapCurious/jev-cascade && cd jev-cascade`, or `uvx --from git+https://github.com/CapCurious/jev-cascade jev-cascade --demo`. `run [ITEMS] [QUESTIONS] [POLICY]` writes one JSONL row per item (`run --help` lists the flags). `report [OUTPUT]`, as in `python3 jev_cascade.py report examples/run_live.jsonl`, prints cost, latency and accuracy per stage plus the stronger-second-stage check.
 
 ## Threshold policy
 
@@ -39,7 +39,7 @@ python3 jev_cascade.py run ... --stage2 "my-model-cli --json"
 
 ## Cookbook: support-ticket triage
 
-Questions: `urgent` and `needs_human` (noul), `category` (choice), `sentiment` (score, five levels), on 120 synthetic tickets from `examples/make_fixtures.py`, labels true by construction. Run 2026-10-18: `jev-1.13.0`, then the default stage two (claude CLI 2.1.286), default policy, 83,193 input tokens. 56.7% is the unfitted default; the tuned policy below escalates 38.3%.
+Questions: `urgent` and `needs_human` (noul), `category` (choice), `sentiment` (score, five levels), on 120 synthetic tickets from `examples/make_fixtures.py`, labels true by construction; Run 2026-10-18: `jev-1.13.0`, then the default stage two (claude CLI 2.1.286), default policy, 83,193 input tokens. 56.7% is the unfitted default; the tuned policy below escalates 38.3%.
 
 ```
 escalated: 68 of 120 (56.7%); stage two ran on 40, skipped 28, replies with a parse problem 0
@@ -51,9 +51,9 @@ escalated items, all fields pooled: stage one 131/160 (81.9%), stage two 137/160
 ```
 (`python3 jev_cascade.py --demo` output, abridged; category and needs_human tie at 100%)
 
-Stage two ran on the first 40 escalated tickets; the other 28 kept stage one. Its lead of 6 came from sentiment (13 against 8 of 28 below-act fields) and one urgent ticket. Its median, 4.02 s, is about 21 times stage one's.
+Stage two ran on the first 40 escalated tickets; the other 28 kept stage one. Its lead of 6 came from sentiment and one urgent ticket; its median, 4.02 s, is about 21 times stage one's.
 
-Tuning one band reruns no inference: `examples/policy_tuned.json` hand-sets sentiment to act 0.60, review 0.55 and replays the recorded responses:
+Tuning a band reruns no inference: `examples/policy_tuned.json` sets sentiment to act 0.60, review 0.55 and replays the recorded responses:
 
 ```
 python3 jev_cascade.py --demo run examples/tickets.jsonl examples/questions.json examples/policy_tuned.json --out examples/run_tuned.jsonl
@@ -81,9 +81,9 @@ JEV_LIVE=1 python3 -m unittest discover -s tests      # also runs stage one live
 python3 examples/make_fixtures.py                     # regenerate fixtures (seeded)
 ```
 
-Expected last line: `OK (skipped=1)` in a git checkout, `OK (skipped=2)` in a downloaded tree. `jev_client.py` is shared across the Jev kits. [EVAL.md](EVAL.md) rebuilds the numbers, [docs/HOW_IT_WAS_BUILT.md](docs/HOW_IT_WAS_BUILT.md) the method; `python3 tools/make_explainer_data.py` re-embeds the run into the explainer.
+Expected last line: `OK (skipped=1)` in a git checkout, `OK (skipped=2)` in a downloaded tree. [EVAL.md](EVAL.md) rebuilds the numbers, [docs/HOW_IT_WAS_BUILT.md](docs/HOW_IT_WAS_BUILT.md) the method; `python3 tools/make_explainer_data.py` re-embeds the run into the explainer.
 
-Jev kits: [jev-threshold-lab](https://github.com/CapCurious/jev-threshold-lab) fits act and review lines per question on labeled data; [jev-role-ranker](https://github.com/CapCurious/jev-role-ranker) ranks job postings with Jev and leaves flags for a person.
+Jev kits: [jev-threshold-lab](https://github.com/CapCurious/jev-threshold-lab) fits act and review lines per question; [jev-role-ranker](https://github.com/CapCurious/jev-role-ranker) ranks job postings and flags, never rejects.
 
 ## License
 
