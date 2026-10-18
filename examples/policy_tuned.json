@@ -1,0 +1,51 @@
+{
+  "fitted_on": {
+    "date": "2026-10-18",
+    "n": 0,
+    "source": "tuned by hand from the recorded run (sentiment act 0.60, review 0.55, other questions unchanged); not fitted. jev-threshold-lab is the tool that fits bands properly on your own labels"
+  },
+  "model": "jev-1.13.0",
+  "note": "thresholds do not transfer; refit on your data",
+  "questions": {
+    "category": {
+      "act": 0.85,
+      "metrics": {
+        "ece": 0.0,
+        "precision_at_act": 0.0,
+        "recall_at_act": 0.0
+      },
+      "review": 0.6,
+      "type": "choice"
+    },
+    "needs_human": {
+      "act": 0.85,
+      "metrics": {
+        "ece": 0.0,
+        "precision_at_act": 0.0,
+        "recall_at_act": 0.0
+      },
+      "review": 0.6,
+      "type": "noul"
+    },
+    "sentiment": {
+      "act": 0.6,
+      "metrics": {
+        "ece": 0.0,
+        "precision_at_act": 0.0,
+        "recall_at_act": 0.0
+      },
+      "review": 0.55,
+      "type": "score"
+    },
+    "urgent": {
+      "act": 0.85,
+      "metrics": {
+        "ece": 0.0,
+        "precision_at_act": 0.0,
+        "recall_at_act": 0.0
+      },
+      "review": 0.6,
+      "type": "noul"
+    }
+  }
+}

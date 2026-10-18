@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-cascade"
+version = "0.1.0"
+description = "Run Jev on every item, send only the uncertain ones to a stronger second stage, and report cost, latency and accuracy per stage."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[project.scripts]
+jev-cascade = "jev_cascade:main"
+
+[tool.setuptools]
+py-modules = ["jev_cascade", "jev_client"]

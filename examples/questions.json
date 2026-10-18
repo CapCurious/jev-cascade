@@ -1,0 +1,31 @@
+{
+  "category": {
+    "criteria": {
+      "account": "login, password, profile, workspace members or account deletion",
+      "billing": "charges, invoices, receipts, refunds, payment methods or plan changes",
+      "bug": "something in the product is broken or does not work as designed",
+      "other": "anything else, including pricing questions, feature requests, integrations and feedback"
+    },
+    "instructions": "Which category is the main request of this ticket, meaning the first thing the customer asks for? If the ticket mentions a second topic, ignore it.",
+    "type": "choice"
+  },
+  "needs_human": {
+    "instructions": "Does this ticket need a human agent instead of an automated reply? Answer yes when the customer asks for a manager or a person, threatens legal action, says this is a repeat contact that nobody has resolved, reports that someone else logged in to their account, or asks for a refund of more than $500. Mentioning a manager or a legal team in passing does not count.",
+    "type": "noul"
+  },
+  "sentiment": {
+    "criteria": [
+      "very negative: angry, furious or abusive",
+      "negative: disappointed or frustrated",
+      "neutral: matter of fact, no strong feeling",
+      "positive: polite and appreciative",
+      "very positive: enthusiastic or delighted"
+    ],
+    "instructions": "How does the customer feel overall? Judge the overall tone of the ticket.",
+    "type": "score"
+  },
+  "urgent": {
+    "instructions": "Is this support ticket urgent? Answer yes only when the customer is blocked right now or faces a hard deadline within a day, such as an outage, a lockout or a payment due today. Ignore how urgent the customer says it is: capital letters, exclamation marks and the word urgent do not count, and 'no rush' does not cancel a real outage.",
+    "type": "noul"
+  }
+}

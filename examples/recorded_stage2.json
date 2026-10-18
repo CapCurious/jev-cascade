@@ -1,0 +1,207 @@
+{
+ "command": "claude -p --model sonnet --setting-sources project",
+ "note": "raw stage-two replies; replayed by --demo",
+ "recorded_on": "2026-10-18",
+ "records": [
+  {
+   "id": "t005",
+   "latency_s": 3.85,
+   "raw": "{\"category\":\"other\",\"needs_human\":true,\"sentiment\":1,\"urgent\":true}\n"
+  },
+  {
+   "id": "t008",
+   "latency_s": 3.749,
+   "raw": "{\"category\":\"other\",\"needs_human\":false,\"sentiment\":1,\"urgent\":true}\n"
+  },
+  {
+   "id": "t010",
+   "latency_s": 5.104,
+   "raw": "{\"category\":\"account\",\"needs_human\":true,\"sentiment\":3,\"urgent\":false}\n"
+  },
+  {
+   "id": "t011",
+   "latency_s": 5.364,
+   "raw": "{\"category\": \"billing\", \"needs_human\": false, \"sentiment\": 2, \"urgent\": true}\n"
+  },
+  {
+   "id": "t012",
+   "latency_s": 3.702,
+   "raw": "{\"category\":\"billing\",\"needs_human\":false,\"sentiment\":3,\"urgent\":true}\n"
+  },
+  {
+   "id": "t013",
+   "latency_s": 3.606,
+   "raw": "{\"category\":\"bug\",\"needs_human\":false,\"sentiment\":4,\"urgent\":false}\n"
+  },
+  {
+   "id": "t014",
+   "latency_s": 3.957,
+   "raw": "{\"category\":\"other\",\"needs_human\":false,\"sentiment\":3,\"urgent\":false}\n"
+  },
+  {
+   "id": "t016",
+   "latency_s": 4.586,
+   "raw": "{\"category\":\"account\",\"needs_human\":false,\"sentiment\":4,\"urgent\":true}\n"
+  },
+  {
+   "id": "t018",
+   "latency_s": 3.248,
+   "raw": "{\"category\":\"bug\",\"needs_human\":false,\"sentiment\":2,\"urgent\":false}\n"
+  },
+  {
+   "id": "t019",
+   "latency_s": 4.844,
+   "raw": "{\"category\":\"billing\",\"needs_human\":false,\"sentiment\":3,\"urgent\":false}\n"
+  },
+  {
+   "id": "t020",
+   "latency_s": 4.44,
+   "raw": "{\"category\": \"other\", \"needs_human\": true, \"sentiment\": 2, \"urgent\": false}\n"
+  },
+  {
+   "id": "t021",
+   "latency_s": 3.285,
+   "raw": "{\"category\":\"billing\",\"needs_human\":false,\"sentiment\":2,\"urgent\":false}\n"
+  },
+  {
+   "id": "t022",
+   "latency_s": 4.485,
+   "raw": "{\"category\":\"other\",\"needs_human\":false,\"sentiment\":4,\"urgent\":true}\n"
+  },
+  {
+   "id": "t023",
+   "latency_s": 3.47,
+   "raw": "{\"category\": \"bug\", \"needs_human\": false, \"sentiment\": 2, \"urgent\": true}\n"
+  },
+  {
+   "id": "t024",
+   "latency_s": 6.612,
+   "raw": "{\"category\":\"bug\",\"needs_human\":false,\"sentiment\":4,\"urgent\":true}\n"
+  },
+  {
+   "id": "t025",
+   "latency_s": 4.666,
+   "raw": "{\"category\": \"account\", \"needs_human\": false, \"sentiment\": 2, \"urgent\": true}\n"
+  },
+  {
+   "id": "t026",
+   "latency_s": 3.338,
+   "raw": "{\"category\": \"bug\", \"needs_human\": true, \"sentiment\": 2, \"urgent\": false}\n"
+  },
+  {
+   "id": "t027",
+   "latency_s": 3.585,
+   "raw": "{\"category\":\"billing\",\"needs_human\":true,\"sentiment\":4,\"urgent\":false}\n"
+  },
+  {
+   "id": "t028",
+   "latency_s": 4.619,
+   "raw": "{\"category\":\"bug\",\"needs_human\":false,\"sentiment\":2,\"urgent\":true}\n"
+  },
+  {
+   "id": "t031",
+   "latency_s": 3.231,
+   "raw": "{\"category\": \"account\", \"needs_human\": false, \"sentiment\": 3, \"urgent\": true}\n"
+  },
+  {
+   "id": "t035",
+   "latency_s": 3.86,
+   "raw": "{\"category\": \"bug\", \"needs_human\": false, \"sentiment\": 3, \"urgent\": true}\n"
+  },
+  {
+   "id": "t036",
+   "latency_s": 4.616,
+   "raw": "{\"category\": \"account\", \"needs_human\": false, \"sentiment\": 2, \"urgent\": true}\n"
+  },
+  {
+   "id": "t039",
+   "latency_s": 4.767,
+   "raw": "{\"category\": \"account\", \"needs_human\": false, \"sentiment\": 2, \"urgent\": true}\n"
+  },
+  {
+   "id": "t040",
+   "latency_s": 5.94,
+   "raw": "{\"category\": \"bug\", \"needs_human\": false, \"sentiment\": 2, \"urgent\": true}\n"
+  },
+  {
+   "id": "t042",
+   "latency_s": 3.467,
+   "raw": "{\"category\":\"bug\",\"needs_human\":false,\"sentiment\":2,\"urgent\":false}\n"
+  },
+  {
+   "id": "t043",
+   "latency_s": 4.951,
+   "raw": "{\"category\": \"bug\", \"needs_human\": false, \"sentiment\": 4, \"urgent\": true}\n"
+  },
+  {
+   "id": "t044",
+   "latency_s": 4.516,
+   "raw": "{\"category\":\"account\",\"needs_human\":false,\"sentiment\":3,\"urgent\":false}\n"
+  },
+  {
+   "id": "t045",
+   "latency_s": 5.372,
+   "raw": "{\"category\":\"billing\",\"needs_human\":true,\"sentiment\":4,\"urgent\":false}\n"
+  },
+  {
+   "id": "t048",
+   "latency_s": 3.882,
+   "raw": "{\"category\":\"account\",\"needs_human\":false,\"sentiment\":2,\"urgent\":true}\n"
+  },
+  {
+   "id": "t049",
+   "latency_s": 4.715,
+   "raw": "{\"category\":\"account\",\"needs_human\":true,\"sentiment\":2,\"urgent\":false}\n"
+  },
+  {
+   "id": "t050",
+   "latency_s": 3.425,
+   "raw": "{\"category\":\"account\",\"needs_human\":false,\"sentiment\":4,\"urgent\":true}\n"
+  },
+  {
+   "id": "t052",
+   "latency_s": 5.584,
+   "raw": "{\"category\":\"bug\",\"needs_human\":false,\"sentiment\":4,\"urgent\":true}\n"
+  },
+  {
+   "id": "t053",
+   "latency_s": 3.81,
+   "raw": "{\"category\":\"account\",\"needs_human\":true,\"sentiment\":3,\"urgent\":true}\n"
+  },
+  {
+   "id": "t055",
+   "latency_s": 3.254,
+   "raw": "{\"category\": \"bug\", \"needs_human\": false, \"sentiment\": 4, \"urgent\": false}\n"
+  },
+  {
+   "id": "t056",
+   "latency_s": 4.091,
+   "raw": "{\"category\":\"account\",\"needs_human\":false,\"sentiment\":1,\"urgent\":true}\n"
+  },
+  {
+   "id": "t057",
+   "latency_s": 5.631,
+   "raw": "{\"category\":\"bug\",\"needs_human\":false,\"sentiment\":4,\"urgent\":true}\n"
+  },
+  {
+   "id": "t058",
+   "latency_s": 3.932,
+   "raw": "{\"category\":\"other\",\"needs_human\":true,\"sentiment\":2,\"urgent\":false}\n"
+  },
+  {
+   "id": "t064",
+   "latency_s": 3.4,
+   "raw": "{\"category\":\"billing\",\"needs_human\":false,\"sentiment\":4,\"urgent\":false}\n"
+  },
+  {
+   "id": "t065",
+   "latency_s": 5.189,
+   "raw": "{\"category\":\"other\",\"needs_human\":false,\"sentiment\":4,\"urgent\":false}\n"
+  },
+  {
+   "id": "t066",
+   "latency_s": 3.792,
+   "raw": "{\"category\": \"bug\", \"needs_human\": true, \"sentiment\": 4, \"urgent\": false}\n"
+  }
+ ]
+}

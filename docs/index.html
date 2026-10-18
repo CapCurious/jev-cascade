@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>jev-cascade explainer</title>
+<meta name="description" content="Move four thresholds and watch 120 support tickets move between acting on Jev's answer and escalating to a stronger second stage, with cost, latency and accuracy recomputed live.">
+<style>
+:root{
+  --bg:#fafaf8; --panel:#ffffff; --fg:#1c1c1a; --muted:#5b5b55; --line:#d9d9d1;
+  --accent:#a84a00; --hl:rgba(245,158,11,.30); --hl-strong:rgba(245,158,11,.50);
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#151513; --panel:#1d1d1a; --fg:#ecebe6; --muted:#a6a59c; --line:#37362f;
+    --accent:#fbbf24; --hl:rgba(251,191,36,.20); --hl-strong:rgba(251,191,36,.38);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--sans)}
+a{color:inherit}
+.wrap{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:0 1.25rem;max-width:1280px;margin:0 auto;padding:0 16px}
+.rail{position:sticky;top:0;align-self:start;padding:20px 0}
+.rail b{display:block;font-size:13px;margin-bottom:10px}
+.rail a{display:block;padding:6px 10px;border-left:3px solid var(--line);color:var(--muted);text-decoration:none;font-size:14px}
+.rail a:hover{color:var(--fg)}
+.rail a.on{border-left-color:var(--accent);color:var(--fg);font-weight:600}
+main{min-width:0;padding:20px 0 64px}
+h1{font-size:22px;line-height:1.25;margin:0 0 4px}
+h2{font-size:18px;margin:0 0 8px}
+h3{font-size:14px;margin:0}
+.lede{margin:0 0 12px;color:var(--muted);max-width:78ch}
+section{scroll-margin-top:12px}
+.controls{position:sticky;top:0;z-index:4;display:flex;gap:10px 22px;align-items:end;flex-wrap:wrap;padding:10px 14px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.ctl{flex:1 1 150px;min-width:140px}
+.ctl label{display:flex;justify-content:space-between;font-size:13px;gap:8px}
+.ctl output{font-family:var(--mono);font-weight:600}
+input[type=range]{width:100%;margin:2px 0 0;accent-color:var(--accent)}
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-size:13px;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 0}
+.stat{padding:6px 10px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.stat .v{font:600 18px/1.25 var(--mono)}
+.stat .k{font-size:12px;color:var(--muted)}
+.stat .d{font-size:11px;color:var(--muted);font-family:var(--mono)}
+.stat .d.m{color:var(--fg);font-weight:600}
+.cap{font-size:12px;color:var(--muted);margin:8px 0 6px}
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.pane{min-width:0}
+.pane h3{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px}
+.pane h3 span{font:600 13px var(--mono)}
+.box{max-height:min(44vh,440px);overflow:auto;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th{position:sticky;top:0;background:var(--panel);text-align:left;font-weight:600;font-size:11px;padding:5px 4px;border-bottom:1px solid var(--line);z-index:1}
+td{padding:3px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.id{font-family:var(--mono);white-space:nowrap}
+td.t{width:99%;max-width:8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+tr.r{cursor:pointer}
+tr.r:hover td{background:var(--hl)}
+tr.r td.id:before{content:"\25B8  ";color:var(--muted)}
+tr.r.open td.id:before{content:"\25BE  "}
+tr.moved td{background:var(--hl)}
+td.low{font-weight:700}
+td.low span{background:var(--hl-strong);padding:0 3px;border-radius:3px}
+tr.det td{background:var(--bg);white-space:normal;font-size:12px;padding:6px 10px}
+tr.det .full{margin:0 0 4px}
+tr.det table{font-size:12px}
+tr.det td,tr.det th{position:static;padding:1px 8px 1px 0;border:0;background:none;font-weight:400}
+tr.det th{font-weight:600}
+.empty{padding:12px;color:var(--muted);font-size:13px}
+.panel{margin-top:36px;max-width:74ch}
+.panel p,.panel li{margin:0 0 8px}
+.panel ul{padding-left:20px;margin:0}
+.rule{border-left:3px solid var(--accent);padding-left:12px;margin:0 0 10px}
+code{font-family:var(--mono);font-size:.92em}
+@media (max-width:1100px){.panes{grid-template-columns:1fr}.box{max-height:40vh}}
+@media (max-width:820px){
+  .wrap{display:block}
+  .rail{display:flex;gap:6px;overflow-x:auto;padding:8px 0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line)}
+  .rail b{display:none}
+  .rail a{border-left:0;border-bottom:3px solid var(--line);white-space:nowrap;padding:4px 8px}
+  .rail a.on{border-bottom-color:var(--accent)}
+  .controls{flex-wrap:nowrap;overflow-x:auto;top:42px}
+  .tools{flex:0 0 auto}
+  .stats{grid-template-columns:1fr 1fr;gap:6px}
+  .stat{padding:4px 8px}
+  .stat .v{font-size:14px}
+  .stat .k{font-size:11px}
+  .stat .d:not(.m){display:none}
+  .lede{font-size:13px;margin-bottom:8px}
+  h1{font-size:19px}
+  .ctl{flex:0 0 130px;min-width:120px}
+  main{padding-top:10px}
+  td.t{display:none}
+  th.t{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="rail" aria-label="Sections">
+  <b>jev-cascade</b>
+  <a href="#try" class="on">Try it</a>
+  <a href="#what">What Jev is</a>
+  <a href="#rule">The cascade rule</a>
+  <a href="#limits">The limits</a>
+</nav>
+<main>
+<section id="try" aria-labelledby="h-try">
+  <h1 id="h-try">Try it</h1>
+  <p class="lede">Raise a line and more tickets go to the stronger second stage; lower it and fewer do. Each of 120 synthetic support tickets has one recorded Jev call and, where escalated, one recorded stage-two reply, so every number is recomputed here with no new model call.</p>
+  <div class="controls" role="group" aria-label="Act line per question">
+    <div class="ctl"><label for="a0">urgent <output id="a0O">0.85</output></label><input id="a0" type="range" min="0.40" max="1" step="0.01" value="0.85"></div>
+    <div class="ctl"><label for="a1">needs_human <output id="a1O">0.85</output></label><input id="a1" type="range" min="0.40" max="1" step="0.01" value="0.85"></div>
+    <div class="ctl"><label for="a2">category <output id="a2O">0.85</output></label><input id="a2" type="range" min="0.40" max="1" step="0.01" value="0.85"></div>
+    <div class="ctl"><label for="a3">sentiment <output id="a3O">0.85</output></label><input id="a3" type="range" min="0.40" max="1" step="0.01" value="0.85"></div>
+    <div class="tools"><button id="tuned" type="button">Sentiment 0.60</button><button id="reset" type="button">Reset to 0.85</button></div>
+  </div>
+  <div class="stats" aria-live="polite">
+    <div class="stat"><div class="v" id="sEsc">-</div><div class="k" id="sEscK">escalated to stage two</div><div class="d" id="sEscD"></div></div>
+    <div class="stat"><div class="v" id="sCost">-</div><div class="k">stage-one cost per 1,000 tickets</div><div class="d">fixed: stage one ran once</div></div>
+    <div class="stat"><div class="v" id="sLat">-</div><div class="k">average latency estimate</div><div class="d">0.19 s x not escalated + 4.0 s x escalated</div></div>
+    <div class="stat"><div class="v" id="sAvail">-</div><div class="k">escalated with a recorded stage-two reply</div><div class="d">the rest keep the stage-one answer</div></div>
+  </div>
+  <div class="stats" aria-live="polite">
+    <div class="stat"><div class="v" id="e0">-</div><div class="k">urgent, end to end</div><div class="d" id="e0D"></div></div>
+    <div class="stat"><div class="v" id="e1">-</div><div class="k">needs_human, end to end</div><div class="d" id="e1D"></div></div>
+    <div class="stat"><div class="v" id="e2">-</div><div class="k">category, end to end</div><div class="d" id="e2D"></div></div>
+    <div class="stat"><div class="v" id="e3">-</div><div class="k">sentiment, end to end</div><div class="d" id="e3D"></div></div>
+  </div>
+  <p class="cap">Highlighted certainty is below that question's line and sent the ticket to stage two. Click a row for answers and labels. The 0.85 default is a community default, not a fit.</p>
+  <div class="panes">
+    <div class="pane"><h3>Act: stage one answers stand <span id="nAct"></span></h3>
+      <div class="box" tabindex="0" role="region" aria-label="Tickets acted on"><table><thead id="hA"></thead><tbody id="bA"></tbody></table></div></div>
+    <div class="pane"><h3>Stage two: sent to the stronger model <span id="nTwo"></span></h3>
+      <div class="box" tabindex="0" role="region" aria-label="Tickets escalated"><table><thead id="hB"></thead><tbody id="bB"></tbody></table></div></div>
+  </div>
+</section>
+
+<section id="what" class="panel" aria-labelledby="h-what">
+  <h2 id="h-what">What Jev is</h2>
+  <p>Jev is a hosted decision model from TypeSafe. You send a JSON state and typed questions: yes or no, pick one, or a 1 to 5 score. It answers with calibrated numbers and no prose, in about 0.2 seconds, for $0.042 per million input tokens.</p>
+  <p>Here one call carries four questions about a support ticket: urgent, needs_human, category and sentiment. Because the answers are numbers, the policy is yours: the four lines above are that policy, and moving one changes who escalates without another model call.</p>
+</section>
+
+<section id="rule" class="panel" aria-labelledby="h-rule">
+  <h2 id="h-rule">The cascade rule</h2>
+  <p class="rule">A ticket stays with stage one only if every question clears its line. If any question falls below, the ticket goes to stage two.</p>
+  <p>The number cut is certainty. For a yes or no question it is the larger of p and 1 minus p, so a confident no acts as readily as a confident yes. For a choice or a score it is the returned confidence. Stage two re-answers all four questions but replaces only the answers stage one was unsure about, so a confident stage-one answer is never overwritten.</p>
+  <p>The check that matters is whether stage two is actually stronger on the same tickets. At the defaults it is, narrowly: 137 of 160 field answers against 131 for stage one, on the 40 tickets it saw. An independent test on shell commands found a Sonnet second stage weaker than Jev alone, 21 of 24 against 23 of 24, so the report warns when stage two is not ahead. Try sentiment at 0.60: escalations fall from 57% to 38% and three answers are lost.</p>
+</section>
+
+<section id="limits" class="panel" aria-labelledby="h-limits">
+  <h2 id="h-limits">The limits</h2>
+  <ul>
+    <li>The tickets are synthetic: 120 generated texts with labels true by construction, stage one <span id="mdl">jev-1.13.0</span>, recorded <span id="rec">2026-10-18</span>. Real tickets will look different.</li>
+    <li>Stage two (claude sonnet, CLI 2.1.286) ran on only 40 of the 68 escalated tickets, in id order. End-to-end accuracy is below a full run's, and lines you raise escalate tickets with no recorded reply.</li>
+    <li>Latency is a weighted average of two measured medians, an estimate. Stage-two cost is not metered: the CLI runs on a subscription.</li>
+    <li>No explanations by design. Calibration is a population property: 0.9 means about nine in ten across many tickets, not that this one is right. Thresholds do not transfer across datasets or model versions.</li>
+    <li>These lines were set by hand. The sibling tool jev-threshold-lab fits them on your own labels.</li>
+  </ul>
+</section>
+</main>
+</div>
+<script>
+/*DATA START*/
+const DATA = {"model":"jev-1.13.0","recorded":"2026-10-18","inputTokens":83193,"pricePerMillion":0.042,"fields":["urgent","needs_human","category","sentiment"],"rows":[["t001","Hi team, Thanks, I appreciate the help so far. Where can I find your API rate limit documentation? Our whole team is blocked and our laun...",[0.94,0.94,1.0,0.95],[true,true,"other",2],null,[true,true,"other",4]],["t002","Hello, I am quite disappointed. How do I add a teammate to our workspace on the Pro plan? Whenever you get a chance.",[0.97,0.95,1.0,1.0],[false,false,"account",2],null,[false,false,"account",2]],["t003","The mobile app crashes when I open the billing history screen. No rush on this. If this is not resolved I will take legal action. Please...",[0.93,0.91,0.99,0.85],[false,true,"bug",2],null,[false,true,"bug",3]],["t004","Hi, Please send me an invoice for March that includes our VAT number. Production is down for all of our users right now. Please refund th...",[0.93,0.96,1.0,1.0],[true,true,"billing",1],null,[true,true,"billing",1]],["t005","Do you offer a student discount? I am locked out and my client presentation starts in an hour. This is the third time I am contacting you...",[0.98,0.92,0.6,0.93],[true,true,"other",2],[true,true,"other",1],[true,true,"other",3]],["t006","Hello, Thanks in advance. Do you offer a student discount?",[0.99,0.96,0.87,0.99],[false,false,"other",4],null,[false,false,"other",3]],["t007","Hello, Thanks, I appreciate the help so far. The receipt for August shows the wrong company name.",[0.97,0.92,1.0,0.98],[false,false,"billing",4],null,[false,false,"billing",4]],["t008","This is unacceptable and I am furious. Are you planning to add a dark mode? I am locked out and my client presentation starts in an hour....",[0.98,0.84,0.69,1.0],[true,false,"other",1],[true,false,"other",1],[true,false,"other",1]],["t009","Hi team, Are you planning to add a dark mode? Just curious. Thanks, I appreciate the help so far.",[0.99,0.95,1.0,1.0],[false,false,"other",4],null,[false,false,"other",4]],["t010","Hi team, How do I add a teammate to our workspace on the Pro plan? Just curious. I want to speak to a manager. Please advise.",[0.97,0.88,1.0,0.7],[false,true,"account",3],[false,true,"account",3],[false,true,"account",3]],["t011","Hi, This is really frustrating. My card was declined but the payment page said it went through. Also, the export button shows an error an...",[0.98,0.87,0.79,0.97],[true,false,"billing",2],[true,false,"billing",2],[true,false,"billing",2]],["t012","Hi team, My card was declined but the payment page said it went through. Our whole team is blocked and our launch is today. Thank you, yo...",[0.97,0.81,0.96,0.21],[true,false,"billing",3],[true,false,"billing",3],[true,false,"billing",5]],["t013","Good morning, Thanks, I appreciate the help so far. The settings page loads forever on Firefox.",[0.7,0.93,1.0,0.78],[false,false,"bug",4],[false,false,"bug",4],[false,false,"bug",4]],["t014","Good morning, Do you offer a student discount?",[0.99,0.96,0.87,0.69],[false,false,"other",4],[false,false,"other",3],[false,false,"other",3]],["t015","Hi team, I am angry about the outage, but I still think the product is great. How do I add a teammate to our workspace on the Team plan?...",[0.96,0.9,1.0,0.89],[true,false,"account",2],null,[true,false,"account",2]],["t016","How do I add a teammate to our workspace on the Starter plan? Production is down for all of our users right now. Happy with the product o...",[0.94,0.85,1.0,0.33],[true,false,"account",3],[true,false,"account",4],[true,false,"account",4]],["t017","Hi team, Your agent was lovely last time, though this delay has annoyed me. Where can I find your API rate limit documentation? I am lock...",[0.97,0.87,0.87,0.99],[true,true,"other",2],null,[true,true,"other",3]],["t018","Good morning, The mobile app crashes when I open the billing history screen. Whenever you get a chance. Your agent was lovely last time,...",[0.81,0.89,1.0,0.9],[false,false,"bug",2],[false,false,"bug",2],[false,false,"bug",3]],["t019","Hi team, Please send me an invoice for May that includes our VAT number. Just curious.",[0.98,0.93,1.0,0.77],[false,false,"billing",3],[false,false,"billing",3],[false,false,"billing",3]],["t020","Thanks in advance. I have feedback about your onboarding emails. Whenever you get a chance. If this is not resolved I will take legal act...",[0.95,0.93,1.0,0.79],[false,true,"other",2],[false,true,"other",2],[false,true,"other",3]],["t021","Hello, I was billed for March after I cancelled the Pro plan.",[0.91,0.91,1.0,0.61],[false,false,"billing",2],[false,false,"billing",2],[false,false,"billing",3]],["t022","Hi team, Happy with the product overall. Do you have a status page I can subscribe to? No rush, although the site has been down for all o...",[0.94,0.91,0.99,0.25],[true,false,"other",3],[true,false,"other",4],[true,false,"other",4]],["t023","Hello, The mobile app crashes when I open the billing history screen. Production is down for all of our users right now.",[0.98,0.9,1.0,0.81],[true,false,"bug",2],[true,false,"bug",2],[true,false,"bug",3]],["t024","Hello, I love the product and your support team is fantastic. The dashboard is a blank page after I sign in on Chrome. Production is down...",[0.98,0.84,1.0,0.2],[true,false,"bug",3],[true,false,"bug",4],[true,false,"bug",5]],["t025","Hi, Thanks in advance. How do I add a teammate to our workspace on the Team plan? I am locked out and my client presentation starts in an...",[0.97,0.92,1.0,0.29],[true,false,"account",3],[true,false,"account",2],[true,false,"account",3]],["t026","Good morning, Thanks in advance. The export button shows an error and the file never downloads. I want to speak to a manager.",[0.64,0.97,0.87,0.73],[false,true,"bug",2],[false,true,"bug",2],[false,true,"bug",3]],["t027","I love the product and your support team is fantastic. My card was declined but the payment page said it went through. Whenever you get a...",[0.6,0.95,0.45,0.38],[false,true,"billing",3],[false,true,"billing",4],[false,true,"billing",5]],["t028","Hello, The dashboard is a blank page after I sign in on Chrome. Your agent was lovely last time, though this delay has annoyed me.",[0.7,0.89,1.0,0.95],[true,false,"bug",2],[true,false,"bug",2],[false,false,"bug",3]],["t029","I am quite disappointed. Every comment sends two notification emails instead of one.",[0.96,0.94,1.0,1.0],[false,false,"bug",2],null,[false,false,"bug",2]],["t030","Hello, Thanks, I appreciate the help so far. Are you planning to add a dark mode? No rush on this.",[0.99,0.95,1.0,1.0],[false,false,"other",4],null,[false,false,"other",4]],["t031","Hello, Please delete my account and the data tied to it. I am locked out and my client presentation starts in an hour.",[0.95,0.82,1.0,0.82],[true,false,"account",2],[true,false,"account",3],[true,false,"account",3]],["t032","This is really frustrating. The settings page loads forever on Safari. Please read ASAP when you can, it can wait until next week.",[0.94,0.92,1.0,1.0],[false,false,"bug",2],null,[false,false,"bug",2]],["t033","Hi team, Are you planning to add a dark mode? Our whole team is blocked and our launch is today. I want to speak to a manager. I am quite...",[0.87,0.96,1.0,0.99],[true,true,"other",2],null,[true,true,"other",2]],["t034","Hi team, Can I move from monthly to annual billing and keep my Starter discount? Happy with the product overall.",[0.98,0.93,1.0,1.0],[false,false,"billing",4],null,[false,false,"billing",4]],["t035","Good morning, The reports page loads forever on Safari. Production is down for all of our users right now. Happy with the product overall.",[0.93,0.89,1.0,0.49],[true,false,"bug",3],[true,false,"bug",3],[true,false,"bug",4]],["t036","Hello, How do I add a teammate to our workspace on the Starter plan? Also, I have feedback about your onboarding emails. Production is do...",[0.97,0.76,1.0,1.0],[true,false,"account",2],[true,false,"account",2],[true,false,"account",2]],["t037","Good morning, I normally love the product, but this has been very frustrating. Every comment sends two notification emails instead of one...",[0.95,0.88,1.0,1.0],[true,false,"bug",2],null,[true,false,"bug",2]],["t038","Good morning, I am quite disappointed. I was billed for May after I cancelled the Business plan. Production is down for all of our users...",[0.93,0.86,0.99,1.0],[true,false,"billing",2],null,[true,false,"billing",2]],["t039","Hello, I am quite disappointed. Please delete my account and the data tied to it. Our whole team is blocked and our launch is today.",[0.93,0.84,1.0,1.0],[true,false,"account",2],[true,false,"account",2],[true,false,"account",2]],["t040","Hello, I am quite disappointed. The dashboard is a blank page after I sign in on Edge.",[0.57,0.93,1.0,1.0],[true,false,"bug",2],[true,false,"bug",2],[false,false,"bug",2]],["t041","Please send me an invoice for October that includes our VAT number. Just curious.",[0.98,0.95,1.0,0.89],[false,false,"billing",3],null,[false,false,"billing",3]],["t042","Hi team, The export button shows an error and the file never downloads.",[0.68,0.93,1.0,0.82],[false,false,"bug",3],[false,false,"bug",2],[false,false,"bug",3]],["t043","I love the product and your support team is fantastic. The dashboard is a blank page after I sign in on Firefox.",[0.56,0.93,1.0,0.89],[true,false,"bug",4],[true,false,"bug",4],[false,false,"bug",5]],["t044","Hello, How do I add a teammate to our workspace on the Business plan? No rush on this.",[0.98,0.96,1.0,0.6],[false,false,"account",4],[false,false,"account",3],[false,false,"account",3]],["t045","The receipt for May shows the wrong company name. Please refund the full $1,200 annual fee. Thanks, I appreciate the help so far.",[0.95,0.95,1.0,0.81],[false,true,"billing",4],[false,true,"billing",4],[false,true,"billing",4]],["t046","Hello, Do you have a status page I can subscribe to? Not urgent, but our whole team has been locked out since this morning and the demo i...",[0.97,0.89,0.89,1.0],[true,false,"other",1],null,[true,false,"other",1]],["t047","Hi, I am quite disappointed. Can I move from monthly to annual billing and keep my Pro discount? Our whole team is blocked and our launch...",[0.95,0.91,1.0,1.0],[true,false,"billing",2],null,[true,false,"billing",2]],["t048","Hi team, I am quite disappointed. I forgot my password and the reset email never arrives. Production is down for all of our users right now.",[0.98,0.83,0.99,1.0],[true,false,"account",2],[true,false,"account",2],[true,false,"account",2]],["t049","Hi, This is a small thing, and I am happy overall. I forgot my password and the reset email never arrives. This is the third time I am co...",[0.63,0.93,1.0,0.97],[true,true,"account",2],[false,true,"account",2],[false,true,"account",4]],["t050","Hello, Thank you, you have been wonderful. I want to rename our company on the account. Our whole team is blocked and our launch is today.",[0.96,0.85,0.95,0.69],[true,false,"account",4],[true,false,"account",4],[true,false,"account",5]],["t051","I have feedback about your onboarding emails. Also, the receipt for August shows the wrong company name. Whenever you get a chance. I lov...",[0.97,0.91,1.0,0.96],[false,false,"other",4],null,[false,false,"other",5]],["t052","Hi team, Every comment sends two notification emails instead of one. No rush, although the site has been down for all our users for an ho...",[0.94,0.88,1.0,0.63],[true,false,"bug",4],[true,false,"bug",4],[true,false,"bug",5]],["t053","Hi, Please delete my account and the data tied to it. This has to be fixed today or we miss payroll. Please have a real person call me. T...",[0.69,0.95,1.0,0.63],[true,true,"account",2],[true,true,"account",3],[true,true,"account",3]],["t054","Hi, Are you planning to add a dark mode? Also, the receipt for March shows the wrong company name. Just curious. This is the third time I...",[0.95,0.91,1.0,1.0],[false,true,"other",2],null,[false,true,"other",2]],["t055","Good morning, I love the product and your support team is fantastic. Search returns nothing for items I can see in the list.",[0.88,0.92,1.0,0.82],[false,false,"bug",4],[false,false,"bug",4],[false,false,"bug",5]],["t056","Hi, I forgot my password and the reset email never arrives. Not urgent, but our whole team has been locked out since this morning and the...",[0.94,0.86,1.0,0.61],[true,false,"account",1],[true,false,"account",1],[true,false,"account",1]],["t057","Hi, Every comment sends two notification emails instead of one. This has to be fixed today or we miss payroll. Thanks, I appreciate the h...",[0.79,0.88,1.0,0.22],[true,false,"bug",3],[true,false,"bug",4],[true,false,"bug",4]],["t058","Hi, Does your product work with Zapier? If this is not resolved I will take legal action. I normally love the product, but this has been...",[0.89,0.91,1.0,0.78],[false,true,"other",2],[false,true,"other",2],[false,true,"other",2]],["t059","This is really frustrating. How do I add a teammate to our workspace on the Team plan?",[0.94,0.96,1.0,1.0],[false,false,"account",2],null,[false,false,"account",2]],["t060","Hi team, This is unacceptable and I am furious. Are you planning to add a dark mode?",[0.97,0.92,1.0,1.0],[false,false,"other",1],null,[false,false,"other",1]],["t061","Can I move from monthly to annual billing and keep my Team discount? Thanks, I appreciate the help so far.",[0.98,0.93,1.0,1.0],[false,false,"billing",4],null,[false,false,"billing",4]],["t062","Hi team, I need to change the email address on my account. I am locked out and my client presentation starts in an hour. This is really f...",[0.98,0.85,1.0,1.0],[true,false,"account",2],null,[true,false,"account",2]],["t063","Hi team, I was charged twice for the Pro plan this month. Just curious. This is really frustrating.",[0.93,0.9,1.0,1.0],[false,false,"billing",2],null,[false,false,"billing",2]],["t064","Hi, Thanks, I appreciate the help so far. My card was declined but the payment page said it went through. Also, how do I add a teammate t...",[0.62,0.92,0.88,0.93],[false,false,"billing",4],[false,false,"billing",4],[false,false,"billing",4]],["t065","Hi, I love the product and your support team is fantastic. I have feedback about your onboarding emails. No rush on this.",[0.99,0.95,1.0,0.76],[false,false,"other",4],[false,false,"other",4],[false,false,"other",5]],["t066","Hi, Thank you, you have been wonderful. Every comment sends two notification emails instead of one. Please have a real person call me.",[0.91,0.97,0.92,0.32],[false,true,"bug",3],[false,true,"bug",4],[false,true,"bug",5]],["t067","Hello, Please send me an invoice for May that includes our VAT number. This has to be fixed today or we miss payroll. This is unacceptabl...",[0.86,0.89,1.0,1.0],[true,false,"billing",1],null,[true,false,"billing",1]],["t068","Hello, I was charged twice for the Team plan this month. I am locked out and my client presentation starts in an hour. Thanks, I apprecia...",[0.98,0.84,0.92,0.27],[true,false,"billing",3],null,[true,false,"billing",4]],["t069","This is unacceptable and I am furious. Do you have a status page I can subscribe to? Just curious.",[0.89,0.9,0.95,1.0],[false,false,"other",1],null,[false,false,"other",1]],["t070","Hi team, Does your product work with Slack? I am locked out and my client presentation starts in an hour.",[0.97,0.86,0.89,0.93],[true,false,"other",2],null,[true,false,"other",3]],["t071","Hi team, Please delete my account and the data tied to it. Also, please send me an invoice for October that includes our VAT number. Wors...",[0.95,0.85,1.0,0.68],[false,false,"account",1],null,[false,false,"account",1]],["t072","Hi, I was charged twice for the Business plan this month. This has to be fixed today or we miss payroll. Please advise.",[0.87,0.83,1.0,0.97],[true,false,"billing",2],null,[true,false,"billing",3]],["t073","Hi, Thanks, I appreciate the help so far. Are you planning to add a dark mode? I want to speak to a manager.",[0.98,0.97,1.0,0.34],[false,true,"other",3],null,[false,true,"other",4]],["t074","Hi team, Search returns nothing for items I can see in the list. Just curious. This is the third time I am contacting you about this and...",[0.86,0.93,1.0,1.0],[false,true,"bug",2],null,[false,true,"bug",3]],["t075","Hi, Does your product work with Zapier? No rush on this. I love the product and your support team is fantastic.",[0.99,0.96,1.0,0.74],[false,false,"other",4],null,[false,false,"other",5]],["t076","Hello, Worst service I have ever had. How do I add a teammate to our workspace on the Starter plan? No rush on this. If this is not resol...",[0.97,0.86,1.0,0.89],[false,true,"account",1],null,[false,true,"account",1]],["t077","Good morning, This is really frustrating. The settings page loads forever on Firefox.",[0.77,0.93,1.0,1.0],[false,false,"bug",2],null,[false,false,"bug",2]],["t078","Hi, Worst service I have ever had. My card was declined but the payment page said it went through. No rush on this.",[0.91,0.89,0.72,0.63],[false,false,"billing",1],null,[false,false,"billing",1]],["t079","Hi, Thanks in advance. The export button shows an error and the file never downloads. Also, the receipt for October shows the wrong compa...",[0.83,0.92,1.0,0.59],[false,false,"bug",3],null,[false,false,"bug",3]],["t080","The mobile app crashes when I open the reports screen. This has to be fixed today or we miss payroll. Please advise.",[0.93,0.9,1.0,0.97],[true,false,"bug",2],null,[true,false,"bug",3]],["t081","Hi, I was charged twice for the Pro plan this month. I am locked out and my client presentation starts in an hour. If this is not resolve...",[0.98,0.9,0.96,0.82],[true,true,"billing",2],null,[true,true,"billing",5]],["t082","Good morning, My card was declined but the payment page said it went through. I am locked out and my client presentation starts in an hour.",[0.98,0.85,0.44,0.98],[true,false,"account",2],null,[true,false,"billing",3]],["t083","Good morning, Are you planning to add a dark mode? Our whole team is blocked and our launch is today. Please advise.",[0.88,0.9,1.0,0.95],[true,false,"other",2],null,[true,false,"other",3]],["t084","Hello, This is really frustrating. Can I move from monthly to annual billing and keep my Pro discount?",[0.97,0.93,1.0,1.0],[false,false,"billing",2],null,[false,false,"billing",2]],["t085","Hi, Thanks, I appreciate the help so far. Please send me an invoice for March that includes our VAT number. Whenever you get a chance.",[0.98,0.93,1.0,1.0],[false,false,"billing",4],null,[false,false,"billing",4]],["t086","Good morning, I have feedback about your onboarding emails. Whenever you get a chance. Worst service I have ever had.",[0.97,0.92,1.0,0.78],[false,false,"other",1],null,[false,false,"other",1]],["t087","Hi team, Can I move from monthly to annual billing and keep my Starter discount? Whenever you get a chance. Thanks in advance.",[0.98,0.92,1.0,0.99],[false,false,"billing",4],null,[false,false,"billing",3]],["t088","Hello, Please advise. Search returns nothing for items I can see in the list. Not urgent, but our whole team has been locked out since th...",[0.95,0.96,0.93,0.97],[true,true,"bug",2],null,[true,true,"bug",3]],["t089","Happy with the product overall. The receipt for May shows the wrong company name. No rush on this.",[0.98,0.94,0.96,0.93],[false,false,"billing",4],null,[false,false,"billing",4]],["t090","I am quite disappointed. I forgot my password and the reset email never arrives. Whenever you get a chance.",[0.64,0.91,0.99,1.0],[false,false,"account",2],null,[false,false,"account",2]],["t091","Hi team, My card was declined but the payment page said it went through. Not urgent, but our whole team has been locked out since this mo...",[0.94,0.84,0.37,1.0],[true,false,"billing",2],null,[true,false,"billing",2]],["t092","Hello, Worst service I have ever had. Can you remove a former colleague from our workspace? Whenever you get a chance. Please have a real...",[0.91,0.93,1.0,0.72],[false,true,"account",1],null,[false,true,"account",1]],["t093","Good morning, Thanks, I appreciate the help so far. How do I add a teammate to our workspace on the Starter plan? Production is down for...",[0.97,0.82,1.0,0.32],[true,false,"account",3],null,[true,false,"account",4]],["t094","Hi team, Please delete my account and the data tied to it. No rush on this. Thanks, I appreciate the help so far.",[0.99,0.9,1.0,1.0],[false,false,"account",4],null,[false,false,"account",4]],["t095","Are you planning to add a dark mode? Also, can you remove a former colleague from our workspace? Production is down for all of our users...",[0.97,0.69,0.99,0.83],[true,false,"other",1],null,[true,false,"other",1]],["t096","Hi team, Thanks in advance. I need to change the email address on my account.",[0.97,0.92,1.0,0.98],[false,false,"account",4],null,[false,false,"account",3]],["t097","Hello, Please delete my account and the data tied to it. Someone I do not know logged in to my account and changed my settings. This is u...",[0.64,0.96,1.0,1.0],[false,true,"account",1],null,[false,true,"account",1]],["t098","Hello, The billing history page loads forever on Safari. Just curious. This is really frustrating.",[0.77,0.93,0.99,1.0],[false,false,"bug",2],null,[false,false,"bug",2]],["t099","Good morning, This is a small thing, and I am happy overall. The billing history page loads forever on Chrome. Just curious.",[0.94,0.93,0.96,0.87],[false,false,"bug",4],null,[false,false,"bug",4]],["t100","Hello, Your agent was lovely last time, though this delay has annoyed me. Please delete my account and the data tied to it.",[0.96,0.86,1.0,0.95],[false,false,"account",2],null,[false,false,"account",3]],["t101","Hello, Every comment sends two notification emails instead of one. Not urgent, but our whole team has been locked out since this morning...",[0.94,0.86,0.99,0.92],[true,false,"bug",2],null,[true,false,"bug",3]],["t102","Hi team, I want to rename our company on the account. Production is down for all of our users right now. This is the third time I am cont...",[0.94,0.93,0.91,0.92],[true,true,"account",2],null,[true,true,"account",3]],["t103","Hello, Can I move from monthly to annual billing and keep my Business discount? Production is down for all of our users right now.",[0.92,0.85,1.0,0.64],[true,false,"billing",2],null,[true,false,"billing",3]],["t104","Hi team, Please advise. Does your product work with Google Sheets? If this is not resolved I will take legal action.",[0.91,0.94,1.0,0.58],[false,true,"other",2],null,[false,true,"other",3]],["t105","Where can I find your API rate limit documentation? If this is not resolved I will take legal action. I am quite disappointed.",[0.91,0.91,1.0,0.62],[false,true,"other",2],null,[false,true,"other",2]],["t106","Hello, Can you remove a former colleague from our workspace? This is the third time I am contacting you about this and nobody has helped.",[0.88,0.93,1.0,1.0],[false,true,"account",2],null,[false,true,"account",3]],["t107","Please advise. Where can I find your API rate limit documentation?",[0.97,0.96,1.0,0.93],[false,false,"other",3],null,[false,false,"other",3]],["t108","This is a small thing, and I am happy overall. Please delete my account and the data tied to it.",[0.98,0.94,1.0,0.86],[false,false,"account",4],null,[false,false,"account",4]],["t109","Hi team, Are you planning to add a dark mode? I want to speak to a manager. Please advise.",[0.98,0.93,1.0,0.59],[false,true,"other",2],null,[false,true,"other",3]],["t110","Hello, The settings page loads forever on Chrome. Production is down for all of our users right now. Please advise.",[0.97,0.88,1.0,0.88],[true,false,"bug",2],null,[true,false,"bug",3]],["t111","I am quite disappointed. The reports page loads forever on Firefox. Production is down for all of our users right now.",[0.96,0.9,1.0,0.99],[true,false,"bug",2],null,[true,false,"bug",2]],["t112","Good morning, I love the product and your support team is fantastic. I want to rename our company on the account. Just curious. Please ha...",[0.97,0.96,1.0,0.85],[false,true,"account",4],null,[false,true,"account",5]],["t113","Hi, Thanks in advance. How do I add a teammate to our workspace on the Business plan? Whenever you get a chance. If this is not resolved...",[0.94,0.91,1.0,0.68],[false,true,"account",2],null,[false,true,"account",3]],["t114","Good morning, The receipt for August shows the wrong company name. No rush on this. Please refund the full $1,200 annual fee. Thanks, I a...",[0.98,0.95,1.0,0.96],[false,true,"billing",4],null,[false,true,"billing",4]],["t115","Good morning, Happy with the product overall. Can I move from monthly to annual billing and keep my Starter discount? I am locked out and...",[0.97,0.79,1.0,0.58],[true,false,"billing",4],null,[true,false,"billing",4]],["t116","Good morning, This is unacceptable and I am furious. Every comment sends two notification emails instead of one. Also, I want to rename o...",[0.97,0.8,0.97,1.0],[true,false,"bug",1],null,[true,false,"bug",1]],["t117","Thanks, I appreciate the help so far. Do you have a status page I can subscribe to? Whenever you get a chance.",[0.98,0.95,1.0,1.0],[false,false,"other",4],null,[false,false,"other",4]],["t118","Hi, I am quite disappointed. The mobile app crashes when I open the profile screen. I want to speak to a manager.",[0.61,0.97,0.77,1.0],[false,true,"bug",2],null,[false,true,"bug",2]],["t119","Are you planning to add a dark mode? This has to be fixed today or we miss payroll. I spoke to a colleague who uses the product and she l...",[0.51,0.9,0.97,0.65],[false,false,"other",2],null,[true,false,"other",3]],["t120","Good morning, This is really frustrating. I was billed for May after I cancelled the Pro plan. Also, the profile page loads forever on Sa...",[0.97,0.8,1.0,0.88],[true,false,"billing",2],null,[true,false,"billing",2]]]};
+/*DATA END*/
+
+/* ---- pure core (same rule as jev_cascade.py) ---- */
+var DEFAULT_ACT = [0.85, 0.85, 0.85, 0.85];
+function route(row, act) {
+  var low = [], esc = false, i;
+  for (i = 0; i < 4; i++) { var b = row[2][i] < act[i]; low.push(b); if (b) esc = true; }
+  return {esc: esc, low: low};
+}
+function finalAnswers(row, act) {
+  var r = route(row, act), out = [], src = [], i;
+  for (i = 0; i < 4; i++) {
+    if (r.low[i] && row[4] && row[4][i] !== null && row[4][i] !== undefined) { out.push(row[4][i]); src.push("stage two"); }
+    else { out.push(row[3][i]); src.push("stage one"); }
+  }
+  return {esc: r.esc, low: r.low, final: out, src: src};
+}
+function summarize(rows, act, data) {
+  var n = rows.length, esc = 0, avail = 0, ok = [0, 0, 0, 0];
+  rows.forEach(function (row) {
+    var f = finalAnswers(row, act);
+    if (f.esc) { esc++; if (row[4]) avail++; }
+    for (var i = 0; i < 4; i++) if (f.final[i] === row[5][i]) ok[i]++;
+  });
+  var share = esc / n;
+  return {n: n, esc: esc, avail: avail, share: share, ok: ok,
+    cost: data.inputTokens / n * 1000 * data.pricePerMillion / 1e6,
+    latency: 0.19 * (1 - share) + 4.0 * share};
+}
+
+/* ---- page ---- */
+if (typeof document !== "undefined") (function () {
+  var rows = DATA.rows, names = DATA.fields, prev = null, base = null, open = {};
+  var $ = function (id) { return document.getElementById(id); };
+  var sl = [0, 1, 2, 3].map(function (i) { return $("a" + i); });
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
+  function show(v, i) { return v === true ? "yes" : v === false ? "no" : v === null || v === undefined ? "-" : String(v); }
+  function cert(c) { return c >= 1 ? "1.00" : c.toFixed(2).replace(/^0/, ""); }
+  function pct(a, b) { return (100 * a / b).toFixed(1) + "%"; }
+  function head() {
+    return '<tr><th>ticket</th><th class="t">text</th><th class="n">urgent</th><th class="n">needs_<wbr>human</th><th class="n">category</th><th class="n">sentiment</th><th class="n">right</th></tr>';
+  }
+  function rowHtml(row, f, moved) {
+    var hit = 0, i, cells = "";
+    for (i = 0; i < 4; i++) { if (f.final[i] === row[5][i]) hit++; }
+    for (i = 0; i < 4; i++) {
+      var c = cert(row[2][i]);
+      cells += '<td class="n' + (f.low[i] ? ' low' : '') + '">' + (f.low[i] ? '<span>' + c + '</span>' : c) + '</td>';
+    }
+    var s = '<tr class="r' + (open[row[0]] ? ' open' : '') + (moved ? ' moved' : '') + '" data-id="' + row[0] + '"><td class="id">' + row[0] +
+      '</td><td class="t" title="' + esc(row[1]) + '">' + esc(row[1]) + '</td>' + cells + '<td class="n">' + hit + '/4</td></tr>';
+    if (open[row[0]]) {
+      var d = '<tr class="det"><td colspan="7"><p class="full">' + esc(row[1]) + '</p><table><tr><th>question</th><th>stage one</th><th>stage two</th><th>final</th><th>label</th></tr>';
+      for (i = 0; i < 4; i++) {
+        d += '<tr><td>' + names[i] + '</td><td>' + show(row[3][i]) + ' (' + cert(row[2][i]) + ')</td><td>' + (row[4] ? show(row[4][i]) : "not run") +
+          '</td><td>' + show(f.final[i]) + ' (' + f.src[i] + ')' + (f.final[i] === row[5][i] ? '' : ' wrong') + '</td><td>' + show(row[5][i]) + '</td></tr>';
+      }
+      s += d + '</table></td></tr>';
+    }
+    return s;
+  }
+  function render(changed) {
+    var act = sl.map(function (e) { return parseFloat(e.value); });
+    act.forEach(function (a, i) { $("a" + i + "O").textContent = a.toFixed(2); });
+    var A = "", B = "", nA = 0, nB = 0, routes = {};
+    rows.forEach(function (row) {
+      var f = finalAnswers(row, act);
+      routes[row[0]] = f.esc;
+      var moved = changed && prev && prev[row[0]] !== f.esc;
+      if (f.esc) { B += rowHtml(row, f, moved); nB++; } else { A += rowHtml(row, f, moved); nA++; }
+    });
+    $("hA").innerHTML = head(); $("hB").innerHTML = head();
+    $("bA").innerHTML = A || '<tr><td colspan="7" class="empty">No ticket clears every line.</td></tr>';
+    $("bB").innerHTML = B || '<tr><td colspan="7" class="empty">Nothing escalates at these lines.</td></tr>';
+    $("nAct").textContent = nA; $("nTwo").textContent = nB;
+    prev = routes;
+    var s = summarize(rows, act, DATA);
+    if (!base) base = summarize(rows, DEFAULT_ACT, DATA);
+    $("sEsc").textContent = pct(s.esc, s.n);
+    $("sEscK").textContent = "escalated to stage two (" + s.esc + " of " + s.n + ")";
+    $("sEscD").textContent = "default lines: " + pct(base.esc, base.n);
+    $("sCost").textContent = "$" + s.cost.toFixed(4);
+    $("sLat").textContent = s.latency.toFixed(2) + " s";
+    $("sAvail").textContent = s.avail + " of " + s.esc;
+    for (var i = 0; i < 4; i++) {
+      $("e" + i).textContent = s.ok[i] + "/" + s.n + " (" + pct(s.ok[i], s.n) + ")";
+      var d = s.ok[i] - base.ok[i];
+      $("e" + i + "D").textContent = d === 0 ? "same as default lines" : (d > 0 ? "+" : "-") + Math.abs(d) + " against default lines";
+      $("e" + i + "D").className = "d" + (d === 0 ? "" : " m");
+    }
+  }
+  sl.forEach(function (e) { e.addEventListener("input", function () { render(true); }); });
+  function set(v) { sl.forEach(function (e, i) { e.value = v[i]; }); prev = null; render(false); }
+  $("reset").addEventListener("click", function () { set(DEFAULT_ACT); });
+  $("tuned").addEventListener("click", function () { set([0.85, 0.85, 0.85, 0.60]); });
+  function toggle(ev) {
+    var tr = ev.target.closest ? ev.target.closest("tr.r") : null;
+    if (!tr) return;
+    var id = tr.getAttribute("data-id");
+    if (open[id]) delete open[id]; else open[id] = true;
+    render(false);
+  }
+  $("bA").addEventListener("click", toggle); $("bB").addEventListener("click", toggle);
+  $("mdl").textContent = DATA.model; $("rec").textContent = DATA.recorded;
+  render(false);
+
+  /* left rail: plain scroll listener, no IntersectionObserver */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".rail a"));
+  var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  function mark() {
+    var cur = 0;
+    secs.forEach(function (s, i) { if (s.getBoundingClientRect().top <= 120) cur = i; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = secs.length - 1;
+    links.forEach(function (a, i) { a.classList.toggle("on", i === cur); });
+  }
+  window.addEventListener("scroll", mark, {passive: true});
+  window.addEventListener("resize", mark);
+  mark();
+})();
+if (typeof module !== "undefined") module.exports = {route: route, finalAnswers: finalAnswers, summarize: summarize, DATA: DATA};
+</script>
+</body>
+</html>

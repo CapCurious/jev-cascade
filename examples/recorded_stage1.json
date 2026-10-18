@@ -1,0 +1,7687 @@
+{
+ "model": "jev-1.13.0",
+ "note": "synthetic tickets; replayed by --demo",
+ "recorded_on": "2026-10-18",
+ "records": [
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.94,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.95,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.96,
+      "2": 0.01,
+      "3": 0.02,
+      "4": 0.0
+     },
+     "score": 1.05,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.94,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.182,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Thanks, I appreciate the help so far. Where can I find your API rate limit documentation? Our whole team is blocked and our launch is today. Please have a real person call me."
+   },
+   "usage": {
+    "input_tokens": 704,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.05,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.01,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.213,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, I am quite disappointed. How do I add a teammate to our workspace on the Pro plan? Whenever you get a chance."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.99,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.01,
+      "bug": 0.99,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.91,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.85,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.17,
+      "1": 0.82,
+      "2": 0.01,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.85,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.07,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.187,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "The mobile app crashes when I open the billing history screen. No rush on this. If this is not resolved I will take legal action. Please advise."
+   },
+   "usage": {
+    "input_tokens": 694,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.96,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.93,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.211,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Please send me an invoice for March that includes our VAT number. Production is down for all of our users right now. Please refund the full $1,200 annual fee. This is unacceptable and I am furious."
+   },
+   "usage": {
+    "input_tokens": 710,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.6,
+     "probabilities": {
+      "account": 0.09,
+      "billing": 0.21,
+      "bug": 0.0,
+      "other": 0.7
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.92,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.93,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.08,
+      "1": 0.92,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.92,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.213,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Do you offer a student discount? I am locked out and my client presentation starts in an hour. This is the third time I am contacting you about this and nobody has helped."
+   },
+   "usage": {
+    "input_tokens": 699,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.87,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.1,
+      "bug": 0.0,
+      "other": 0.9
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.04,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.99,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.01,
+      "3": 0.99,
+      "4": 0.0
+     },
+     "score": 2.99,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.01,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.255,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Thanks in advance. Do you offer a student discount?"
+   },
+   "usage": {
+    "input_tokens": 676,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.98,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.02,
+      "3": 0.98,
+      "4": 0.0
+     },
+     "score": 2.98,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.182,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Thanks, I appreciate the help so far. The receipt for August shows the wrong company name."
+   },
+   "usage": {
+    "input_tokens": 684,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.69,
+     "probabilities": {
+      "account": 0.2,
+      "billing": 0.0,
+      "bug": 0.03,
+      "other": 0.77
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.16,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.217,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "This is unacceptable and I am furious. Are you planning to add a dark mode? I am locked out and my client presentation starts in an hour. I spoke to a colleague who uses the product and she liked it."
+   },
+   "usage": {
+    "input_tokens": 707,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.05,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 0.0
+     },
+     "score": 3.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.01,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.194,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Are you planning to add a dark mode? Just curious. Thanks, I appreciate the help so far."
+   },
+   "usage": {
+    "input_tokens": 687,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.88,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.7,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.28,
+      "2": 0.64,
+      "3": 0.08,
+      "4": 0.0
+     },
+     "score": 1.79,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.169,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, How do I add a teammate to our workspace on the Pro plan? Just curious. I want to speak to a manager. Please advise."
+   },
+   "usage": {
+    "input_tokens": 694,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.79,
+     "probabilities": {
+      "account": 0.07,
+      "billing": 0.84,
+      "bug": 0.09,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.13,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.97,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.04,
+      "1": 0.96,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.96,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.179,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, This is really frustrating. My card was declined but the payment page said it went through. Also, the export button shows an error and the file never downloads. I am locked out and my client presentation starts in an hour."
+   },
+   "usage": {
+    "input_tokens": 710,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.96,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.97,
+      "bug": 0.03,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.19,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.21,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.47,
+      "2": 0.01,
+      "3": 0.52,
+      "4": 0.0
+     },
+     "score": 2.05,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.175,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, My card was declined but the payment page said it went through. Our whole team is blocked and our launch is today. Thank you, you have been wonderful."
+   },
+   "usage": {
+    "input_tokens": 698,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.78,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.07,
+      "2": 0.12,
+      "3": 0.81,
+      "4": 0.0
+     },
+     "score": 2.74,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.3,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.2,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, Thanks, I appreciate the help so far. The settings page loads forever on Firefox."
+   },
+   "usage": {
+    "input_tokens": 683,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.87,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.1,
+      "bug": 0.0,
+      "other": 0.9
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.04,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.69,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.37,
+      "3": 0.63,
+      "4": 0.0
+     },
+     "score": 2.63,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.01,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.184,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, Do you offer a student discount?"
+   },
+   "usage": {
+    "input_tokens": 673,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.89,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.09,
+      "1": 0.88,
+      "2": 0.02,
+      "3": 0.01,
+      "4": 0.0
+     },
+     "score": 0.96,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.96,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.182,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, I am angry about the outage, but I still think the product is great. How do I add a teammate to our workspace on the Team plan? Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 707,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.15,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.33,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.46,
+      "2": 0.28,
+      "3": 0.26,
+      "4": 0.0
+     },
+     "score": 1.8,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.94,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.173,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "How do I add a teammate to our workspace on the Starter plan? Production is down for all of our users right now. Happy with the product overall."
+   },
+   "usage": {
+    "input_tokens": 694,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.87,
+     "probabilities": {
+      "account": 0.07,
+      "billing": 0.0,
+      "bug": 0.03,
+      "other": 0.9
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.87,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.99,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.99,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.99,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.199,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Your agent was lovely last time, though this delay has annoyed me. Where can I find your API rate limit documentation? I am locked out and my client presentation starts in an hour. This is the third time I am contacting you about this and nobody has helped."
+   },
+   "usage": {
+    "input_tokens": 719,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.11,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.9,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.9,
+      "2": 0.08,
+      "3": 0.02,
+      "4": 0.0
+     },
+     "score": 1.12,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.19,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.195,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, The mobile app crashes when I open the billing history screen. Whenever you get a chance. Your agent was lovely last time, though this delay has annoyed me."
+   },
+   "usage": {
+    "input_tokens": 698,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.77,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.72,
+      "3": 0.28,
+      "4": 0.0
+     },
+     "score": 2.28,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.184,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Please send me an invoice for May that includes our VAT number. Just curious."
+   },
+   "usage": {
+    "input_tokens": 682,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.93,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.79,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.24,
+      "1": 0.75,
+      "2": 0.01,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.77,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.05,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.214,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Thanks in advance. I have feedback about your onboarding emails. Whenever you get a chance. If this is not resolved I will take legal action."
+   },
+   "usage": {
+    "input_tokens": 695,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.09,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.61,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.53,
+      "2": 0.47,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.47,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.09,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.212,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, I was billed for March after I cancelled the Pro plan."
+   },
+   "usage": {
+    "input_tokens": 677,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.99,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.01,
+      "other": 0.99
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.09,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.25,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.32,
+      "2": 0.26,
+      "3": 0.42,
+      "4": 0.0
+     },
+     "score": 2.11,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.94,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.227,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Happy with the product overall. Do you have a status page I can subscribe to? No rush, although the site has been down for all our users for an hour."
+   },
+   "usage": {
+    "input_tokens": 700,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.81,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.77,
+      "2": 0.23,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.23,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.223,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, The mobile app crashes when I open the billing history screen. Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 688,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.16,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.2,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.44,
+      "2": 0.07,
+      "3": 0.48,
+      "4": 0.01
+     },
+     "score": 2.05,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.174,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, I love the product and your support team is fantastic. The dashboard is a blank page after I sign in on Chrome. Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 700,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.29,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.38,
+      "2": 0.09,
+      "3": 0.53,
+      "4": 0.0
+     },
+     "score": 2.15,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.183,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Thanks in advance. How do I add a teammate to our workspace on the Team plan? I am locked out and my client presentation starts in an hour."
+   },
+   "usage": {
+    "input_tokens": 696,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.87,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.9,
+      "other": 0.1
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.97,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.73,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.76,
+      "2": 0.16,
+      "3": 0.08,
+      "4": 0.0
+     },
+     "score": 1.31,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.36,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.188,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, Thanks in advance. The export button shows an error and the file never downloads. I want to speak to a manager."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.45,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.59,
+      "bug": 0.01,
+      "other": 0.4
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.95,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.38,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.35,
+      "2": 0.04,
+      "3": 0.6,
+      "4": 0.01
+     },
+     "score": 2.28,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.4,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.225,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "I love the product and your support team is fantastic. My card was declined but the payment page said it went through. Whenever you get a chance. I want to speak to a manager."
+   },
+   "usage": {
+    "input_tokens": 701,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.11,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.95,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.95,
+      "2": 0.04,
+      "3": 0.01,
+      "4": 0.0
+     },
+     "score": 1.07,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.7,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.206,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, The dashboard is a blank page after I sign in on Chrome. Your agent was lovely last time, though this delay has annoyed me."
+   },
+   "usage": {
+    "input_tokens": 692,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.06,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.04,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.302,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "I am quite disappointed. Every comment sends two notification emails instead of one."
+   },
+   "usage": {
+    "input_tokens": 678,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.05,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 0.0
+     },
+     "score": 3.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.01,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.273,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Thanks, I appreciate the help so far. Are you planning to add a dark mode? No rush on this."
+   },
+   "usage": {
+    "input_tokens": 688,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.18,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.82,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.79,
+      "2": 0.2,
+      "3": 0.01,
+      "4": 0.0
+     },
+     "score": 1.23,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.95,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.239,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Please delete my account and the data tied to it. I am locked out and my client presentation starts in an hour."
+   },
+   "usage": {
+    "input_tokens": 689,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.06,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.181,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "This is really frustrating. The settings page loads forever on Safari. Please read ASAP when you can, it can wait until next week."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.96,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.99,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.99,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.99,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.87,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.172,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Are you planning to add a dark mode? Our whole team is blocked and our launch is today. I want to speak to a manager. I am quite disappointed."
+   },
+   "usage": {
+    "input_tokens": 699,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 0.0
+     },
+     "score": 3.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.175,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Can I move from monthly to annual billing and keep my Starter discount? Happy with the product overall."
+   },
+   "usage": {
+    "input_tokens": 686,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.11,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.49,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.61,
+      "2": 0.16,
+      "3": 0.22,
+      "4": 0.0
+     },
+     "score": 1.6,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.93,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.19,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, The reports page loads forever on Safari. Production is down for all of our users right now. Happy with the product overall."
+   },
+   "usage": {
+    "input_tokens": 691,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.24,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.206,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, How do I add a teammate to our workspace on the Starter plan? Also, I have feedback about your onboarding emails. Production is down for all of our users right now. I am quite disappointed."
+   },
+   "usage": {
+    "input_tokens": 708,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.12,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.95,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.234,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, I normally love the product, but this has been very frustrating. Every comment sends two notification emails instead of one. Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 700,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.99,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.99,
+      "bug": 0.01,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.14,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.93,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.177,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, I am quite disappointed. I was billed for May after I cancelled the Business plan. Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 694,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.16,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.93,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.194,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, I am quite disappointed. Please delete my account and the data tied to it. Our whole team is blocked and our launch is today."
+   },
+   "usage": {
+    "input_tokens": 692,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.57,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.211,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, I am quite disappointed. The dashboard is a blank page after I sign in on Edge."
+   },
+   "usage": {
+    "input_tokens": 683,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.05,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.89,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.87,
+      "3": 0.13,
+      "4": 0.0
+     },
+     "score": 2.13,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.218,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Please send me an invoice for October that includes our VAT number. Just curious."
+   },
+   "usage": {
+    "input_tokens": 679,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.82,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.21,
+      "2": 0.79,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.79,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.32,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.173,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, The export button shows an error and the file never downloads."
+   },
+   "usage": {
+    "input_tokens": 678,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.89,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.01,
+      "2": 0.01,
+      "3": 0.88,
+      "4": 0.1
+     },
+     "score": 3.07,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.56,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.183,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "I love the product and your support team is fantastic. The dashboard is a blank page after I sign in on Firefox."
+   },
+   "usage": {
+    "input_tokens": 687,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.04,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.6,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.48,
+      "3": 0.52,
+      "4": 0.0
+     },
+     "score": 2.52,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.197,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, How do I add a teammate to our workspace on the Business plan? No rush on this."
+   },
+   "usage": {
+    "input_tokens": 684,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.95,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.81,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.08,
+      "2": 0.07,
+      "3": 0.85,
+      "4": 0.0
+     },
+     "score": 2.77,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.05,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.18,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "The receipt for May shows the wrong company name. Please refund the full $1,200 annual fee. Thanks, I appreciate the help so far."
+   },
+   "usage": {
+    "input_tokens": 695,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.89,
+     "probabilities": {
+      "account": 0.05,
+      "billing": 0.0,
+      "bug": 0.03,
+      "other": 0.92
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.11,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.01,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.177,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Do you have a status page I can subscribe to? Not urgent, but our whole team has been locked out since this morning and the demo is today. This is unacceptable and I am furious."
+   },
+   "usage": {
+    "input_tokens": 704,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.09,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.95,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.194,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, I am quite disappointed. Can I move from monthly to annual billing and keep my Pro discount? Our whole team is blocked and our launch is today."
+   },
+   "usage": {
+    "input_tokens": 695,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 0.99,
+     "probabilities": {
+      "account": 0.99,
+      "billing": 0.0,
+      "bug": 0.01,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.17,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.175,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, I am quite disappointed. I forgot my password and the reset email never arrives. Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 693,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.93,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.97,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.98,
+      "2": 0.01,
+      "3": 0.01,
+      "4": 0.0
+     },
+     "score": 1.03,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.63,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.182,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, This is a small thing, and I am happy overall. I forgot my password and the reset email never arrives. This is the third time I am contacting you about this and nobody has helped."
+   },
+   "usage": {
+    "input_tokens": 704,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 0.95,
+     "probabilities": {
+      "account": 0.96,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.04
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.15,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.69,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.16,
+      "2": 0.01,
+      "3": 0.79,
+      "4": 0.04
+     },
+     "score": 2.72,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.96,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.199,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Thank you, you have been wonderful. I want to rename our company on the account. Our whole team is blocked and our launch is today."
+   },
+   "usage": {
+    "input_tokens": 694,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.09,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.96,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.95,
+      "4": 0.05
+     },
+     "score": 3.04,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.182,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "I have feedback about your onboarding emails. Also, the receipt for August shows the wrong company name. Whenever you get a chance. I love the product and your support team is fantastic."
+   },
+   "usage": {
+    "input_tokens": 703,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.12,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.63,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.2,
+      "2": 0.03,
+      "3": 0.76,
+      "4": 0.01
+     },
+     "score": 2.56,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.94,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.181,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Every comment sends two notification emails instead of one. No rush, although the site has been down for all our users for an hour. Thank you, you have been wonderful."
+   },
+   "usage": {
+    "input_tokens": 701,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.95,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.63,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.67,
+      "2": 0.22,
+      "3": 0.11,
+      "4": 0.0
+     },
+     "score": 1.44,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.69,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.181,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Please delete my account and the data tied to it. This has to be fixed today or we miss payroll. Please have a real person call me. Thanks in advance."
+   },
+   "usage": {
+    "input_tokens": 699,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.91,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.05,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.178,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Are you planning to add a dark mode? Also, the receipt for March shows the wrong company name. Just curious. This is the third time I am contacting you about this and nobody has helped. This is really frustrating."
+   },
+   "usage": {
+    "input_tokens": 710,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.82,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.08,
+      "2": 0.02,
+      "3": 0.87,
+      "4": 0.03
+     },
+     "score": 2.85,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.12,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.181,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, I love the product and your support team is fantastic. Search returns nothing for items I can see in the list."
+   },
+   "usage": {
+    "input_tokens": 689,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.14,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.61,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.53,
+      "1": 0.47,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.47,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.94,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.203,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, I forgot my password and the reset email never arrives. Not urgent, but our whole team has been locked out since this morning and the demo is today. Worst service I have ever had."
+   },
+   "usage": {
+    "input_tokens": 703,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.12,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.22,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.47,
+      "2": 0.13,
+      "3": 0.4,
+      "4": 0.0
+     },
+     "score": 1.93,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.79,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.182,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Every comment sends two notification emails instead of one. This has to be fixed today or we miss payroll. Thanks, I appreciate the help so far."
+   },
+   "usage": {
+    "input_tokens": 695,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.91,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.78,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.26,
+      "1": 0.74,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.74,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.11,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.187,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Does your product work with Zapier? If this is not resolved I will take legal action. I normally love the product, but this has been very frustrating."
+   },
+   "usage": {
+    "input_tokens": 698,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.04,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.06,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.241,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "This is really frustrating. How do I add a teammate to our workspace on the Team plan?"
+   },
+   "usage": {
+    "input_tokens": 682,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.184,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, This is unacceptable and I am furious. Are you planning to add a dark mode?"
+   },
+   "usage": {
+    "input_tokens": 683,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 0.0
+     },
+     "score": 3.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.198,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Can I move from monthly to annual billing and keep my Team discount? Thanks, I appreciate the help so far."
+   },
+   "usage": {
+    "input_tokens": 686,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.15,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.175,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, I need to change the email address on my account. I am locked out and my client presentation starts in an hour. This is really frustrating."
+   },
+   "usage": {
+    "input_tokens": 695,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.07,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.184,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, I was charged twice for the Pro plan this month. Just curious. This is really frustrating."
+   },
+   "usage": {
+    "input_tokens": 685,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.88,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.91,
+      "bug": 0.09,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.93,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.02,
+      "2": 0.04,
+      "3": 0.94,
+      "4": 0.0
+     },
+     "score": 2.93,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.38,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.17,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Thanks, I appreciate the help so far. My card was declined but the payment page said it went through. Also, how do I add a teammate to our workspace on the Pro plan?"
+   },
+   "usage": {
+    "input_tokens": 703,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.05,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.76,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.71,
+      "4": 0.29
+     },
+     "score": 3.28,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.01,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.189,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, I love the product and your support team is fantastic. I have feedback about your onboarding emails. No rush on this."
+   },
+   "usage": {
+    "input_tokens": 692,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.92,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.94,
+      "other": 0.06
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.97,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.32,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.57,
+      "2": 0.05,
+      "3": 0.37,
+      "4": 0.01
+     },
+     "score": 1.8,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.09,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.195,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Thank you, you have been wonderful. Every comment sends two notification emails instead of one. Please have a real person call me."
+   },
+   "usage": {
+    "input_tokens": 691,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.11,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.86,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.175,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Please send me an invoice for May that includes our VAT number. This has to be fixed today or we miss payroll. This is unacceptable and I am furious."
+   },
+   "usage": {
+    "input_tokens": 697,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.92,
+     "probabilities": {
+      "account": 0.06,
+      "billing": 0.94,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.16,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.27,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.53,
+      "2": 0.07,
+      "3": 0.4,
+      "4": 0.0
+     },
+     "score": 1.87,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.186,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, I was charged twice for the Team plan this month. I am locked out and my client presentation starts in an hour. Thanks, I appreciate the help so far."
+   },
+   "usage": {
+    "input_tokens": 698,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.95,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.04,
+      "other": 0.96
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.01,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.11,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.179,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "This is unacceptable and I am furious. Do you have a status page I can subscribe to? Just curious."
+   },
+   "usage": {
+    "input_tokens": 685,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.89,
+     "probabilities": {
+      "account": 0.07,
+      "billing": 0.0,
+      "bug": 0.01,
+      "other": 0.92
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.14,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.93,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.91,
+      "2": 0.09,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.09,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.18,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Does your product work with Slack? I am locked out and my client presentation starts in an hour."
+   },
+   "usage": {
+    "input_tokens": 686,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.15,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.68,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.62,
+      "1": 0.38,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.38,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.05,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.19,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Please delete my account and the data tied to it. Also, please send me an invoice for October that includes our VAT number. Worst service I have ever had."
+   },
+   "usage": {
+    "input_tokens": 699,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.17,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.97,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.97,
+      "2": 0.02,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.02,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.87,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.174,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, I was charged twice for the Business plan this month. This has to be fixed today or we miss payroll. Please advise."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.97,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.34,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.51,
+      "2": 0.19,
+      "3": 0.3,
+      "4": 0.0
+     },
+     "score": 1.79,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.177,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Thanks, I appreciate the help so far. Are you planning to add a dark mode? I want to speak to a manager."
+   },
+   "usage": {
+    "input_tokens": 691,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.93,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.14,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.194,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Search returns nothing for items I can see in the list. Just curious. This is the third time I am contacting you about this and nobody has helped. Please advise."
+   },
+   "usage": {
+    "input_tokens": 700,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.04,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.74,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.69,
+      "4": 0.31
+     },
+     "score": 3.31,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.01,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.239,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Does your product work with Zapier? No rush on this. I love the product and your support team is fantastic."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.86,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.89,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.87,
+      "1": 0.13,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.13,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.193,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Worst service I have ever had. How do I add a teammate to our workspace on the Starter plan? No rush on this. If this is not resolved I will take legal action."
+   },
+   "usage": {
+    "input_tokens": 702,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.23,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.192,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, This is really frustrating. The settings page loads forever on Firefox."
+   },
+   "usage": {
+    "input_tokens": 679,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.72,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.79,
+      "bug": 0.2,
+      "other": 0.01
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.11,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.63,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.56,
+      "1": 0.44,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.44,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.09,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.203,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Worst service I have ever had. My card was declined but the payment page said it went through. No rush on this."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.59,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.08,
+      "2": 0.51,
+      "3": 0.41,
+      "4": 0.0
+     },
+     "score": 2.33,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.17,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.195,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Thanks in advance. The export button shows an error and the file never downloads. Also, the receipt for October shows the wrong company name. Just curious."
+   },
+   "usage": {
+    "input_tokens": 696,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.97,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.96,
+      "2": 0.04,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.03,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.93,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.2,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "The mobile app crashes when I open the reports screen. This has to be fixed today or we miss payroll. Please advise."
+   },
+   "usage": {
+    "input_tokens": 688,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.96,
+     "probabilities": {
+      "account": 0.03,
+      "billing": 0.97,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.9,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.82,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.12,
+      "1": 0.83,
+      "2": 0.01,
+      "3": 0.04,
+      "4": 0.0
+     },
+     "score": 0.98,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.171,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, I was charged twice for the Pro plan this month. I am locked out and my client presentation starts in an hour. If this is not resolved I will take legal action. I love the product and your support team is fantastic."
+   },
+   "usage": {
+    "input_tokens": 711,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 0.44,
+     "probabilities": {
+      "account": 0.58,
+      "billing": 0.36,
+      "bug": 0.06,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.15,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.98,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.98,
+      "2": 0.02,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.02,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.98,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.193,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, My card was declined but the payment page said it went through. I am locked out and my client presentation starts in an hour."
+   },
+   "usage": {
+    "input_tokens": 692,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.95,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.94,
+      "2": 0.06,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.06,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.88,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.171,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, Are you planning to add a dark mode? Our whole team is blocked and our launch is today. Please advise."
+   },
+   "usage": {
+    "input_tokens": 689,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.174,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, This is really frustrating. Can I move from monthly to annual billing and keep my Pro discount?"
+   },
+   "usage": {
+    "input_tokens": 684,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 0.0
+     },
+     "score": 3.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.19,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Thanks, I appreciate the help so far. Please send me an invoice for March that includes our VAT number. Whenever you get a chance."
+   },
+   "usage": {
+    "input_tokens": 693,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.78,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.74,
+      "1": 0.26,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.26,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.22,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, I have feedback about your onboarding emails. Whenever you get a chance. Worst service I have ever had."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.99,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.01,
+      "3": 0.99,
+      "4": 0.0
+     },
+     "score": 2.99,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.186,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Can I move from monthly to annual billing and keep my Starter discount? Whenever you get a chance. Thanks in advance."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.93,
+     "probabilities": {
+      "account": 0.02,
+      "billing": 0.0,
+      "bug": 0.95,
+      "other": 0.03
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.96,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.97,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.97,
+      "2": 0.03,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.04,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.95,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.229,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Please advise. Search returns nothing for items I can see in the list. Not urgent, but our whole team has been locked out since this morning and the demo is today. Please have a real person call me."
+   },
+   "usage": {
+    "input_tokens": 708,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.96,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.97,
+      "bug": 0.01,
+      "other": 0.02
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.06,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.93,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.08,
+      "3": 0.92,
+      "4": 0.0
+     },
+     "score": 2.92,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.171,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Happy with the product overall. The receipt for May shows the wrong company name. No rush on this."
+   },
+   "usage": {
+    "input_tokens": 684,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 0.99,
+     "probabilities": {
+      "account": 0.99,
+      "billing": 0.0,
+      "bug": 0.01,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.09,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.36,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.225,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "I am quite disappointed. I forgot my password and the reset email never arrives. Whenever you get a chance."
+   },
+   "usage": {
+    "input_tokens": 685,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 0.37,
+     "probabilities": {
+      "account": 0.31,
+      "billing": 0.53,
+      "bug": 0.16,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.16,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.94,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.182,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, My card was declined but the payment page said it went through. Not urgent, but our whole team has been locked out since this morning and the demo is today. This is really frustrating."
+   },
+   "usage": {
+    "input_tokens": 704,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.93,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.72,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.67,
+      "1": 0.33,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.33,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.09,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.178,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Worst service I have ever had. Can you remove a former colleague from our workspace? Whenever you get a chance. Please have a real person call me."
+   },
+   "usage": {
+    "input_tokens": 696,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.18,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.32,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.34,
+      "2": 0.14,
+      "3": 0.52,
+      "4": 0.0
+     },
+     "score": 2.18,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.176,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, Thanks, I appreciate the help so far. How do I add a teammate to our workspace on the Starter plan? Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 700,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 0.0
+     },
+     "score": 2.99,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.01,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.173,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Please delete my account and the data tied to it. No rush on this. Thanks, I appreciate the help so far."
+   },
+   "usage": {
+    "input_tokens": 691,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.99,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.01,
+      "other": 0.99
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.31,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.83,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.8,
+      "1": 0.2,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.21,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.181,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Are you planning to add a dark mode? Also, can you remove a former colleague from our workspace? Production is down for all of our users right now. Worst service I have ever had."
+   },
+   "usage": {
+    "input_tokens": 702,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.08,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.98,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.02,
+      "3": 0.98,
+      "4": 0.0
+     },
+     "score": 2.98,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.181,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Thanks in advance. I need to change the email address on my account."
+   },
+   "usage": {
+    "input_tokens": 681,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.96,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.36,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.19,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Please delete my account and the data tied to it. Someone I do not know logged in to my account and changed my settings. This is unacceptable and I am furious."
+   },
+   "usage": {
+    "input_tokens": 699,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.99,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.01,
+      "bug": 0.99,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.23,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.172,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, The billing history page loads forever on Safari. Just curious. This is really frustrating."
+   },
+   "usage": {
+    "input_tokens": 682,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.96,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.03,
+      "bug": 0.97,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.07,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.87,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.01,
+      "2": 0.14,
+      "3": 0.85,
+      "4": 0.0
+     },
+     "score": 2.84,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.06,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.193,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, This is a small thing, and I am happy overall. The billing history page loads forever on Chrome. Just curious."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.14,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.95,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.95,
+      "2": 0.04,
+      "3": 0.01,
+      "4": 0.0
+     },
+     "score": 1.06,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.04,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.181,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Your agent was lovely last time, though this delay has annoyed me. Please delete my account and the data tied to it."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.99,
+     "probabilities": {
+      "account": 0.01,
+      "billing": 0.0,
+      "bug": 0.99,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.14,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.92,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.9,
+      "2": 0.1,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.1,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.94,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.172,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Every comment sends two notification emails instead of one. Not urgent, but our whole team has been locked out since this morning and the demo is today."
+   },
+   "usage": {
+    "input_tokens": 695,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 0.91,
+     "probabilities": {
+      "account": 0.93,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.07
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.93,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.92,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.1,
+      "1": 0.9,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.9,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.94,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.227,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, I want to rename our company on the account. Production is down for all of our users right now. This is the third time I am contacting you about this and nobody has helped. Please advise."
+   },
+   "usage": {
+    "input_tokens": 706,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.15,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.64,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.6,
+      "2": 0.37,
+      "3": 0.03,
+      "4": 0.0
+     },
+     "score": 1.44,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.92,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.183,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Can I move from monthly to annual billing and keep my Business discount? Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 690,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.94,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.58,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.49,
+      "1": 0.5,
+      "2": 0.01,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.52,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.09,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.199,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Please advise. Does your product work with Google Sheets? If this is not resolved I will take legal action."
+   },
+   "usage": {
+    "input_tokens": 688,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.91,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.62,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.45,
+      "1": 0.55,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.55,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.09,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.194,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Where can I find your API rate limit documentation? If this is not resolved I will take legal action. I am quite disappointed."
+   },
+   "usage": {
+    "input_tokens": 689,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.93,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.12,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.177,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, Can you remove a former colleague from our workspace? This is the third time I am contacting you about this and nobody has helped."
+   },
+   "usage": {
+    "input_tokens": 691,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.04,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.93,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.91,
+      "3": 0.09,
+      "4": 0.0
+     },
+     "score": 2.09,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.187,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Please advise. Where can I find your API rate limit documentation?"
+   },
+   "usage": {
+    "input_tokens": 676,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.06,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.86,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.01,
+      "2": 0.15,
+      "3": 0.84,
+      "4": 0.0
+     },
+     "score": 2.83,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.173,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "This is a small thing, and I am happy overall. Please delete my account and the data tied to it."
+   },
+   "usage": {
+    "input_tokens": 686,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.93,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.59,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.53,
+      "2": 0.45,
+      "3": 0.02,
+      "4": 0.0
+     },
+     "score": 1.48,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.216,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi team, Are you planning to add a dark mode? I want to speak to a manager. Please advise."
+   },
+   "usage": {
+    "input_tokens": 686,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.12,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.88,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.85,
+      "2": 0.15,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.15,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.178,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hello, The settings page loads forever on Chrome. Production is down for all of our users right now. Please advise."
+   },
+   "usage": {
+    "input_tokens": 687,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 1.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.99,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.99,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.99,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.96,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.206,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "I am quite disappointed. The reports page loads forever on Firefox. Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 687,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.96,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.85,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.82,
+      "4": 0.18
+     },
+     "score": 3.18,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.03,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.18,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, I love the product and your support team is fantastic. I want to rename our company on the account. Just curious. Please have a real person call me."
+   },
+   "usage": {
+    "input_tokens": 698,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "account",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 1.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.91,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.68,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.23,
+      "1": 0.65,
+      "2": 0.08,
+      "3": 0.04,
+      "4": 0.0
+     },
+     "score": 0.94,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.06,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.192,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, Thanks in advance. How do I add a teammate to our workspace on the Business plan? Whenever you get a chance. If this is not resolved I will take legal action."
+   },
+   "usage": {
+    "input_tokens": 700,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.95,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.96,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.01,
+      "2": 0.03,
+      "3": 0.96,
+      "4": 0.0
+     },
+     "score": 2.95,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.176,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, The receipt for August shows the wrong company name. No rush on this. Please refund the full $1,200 annual fee. Thanks, I appreciate the help so far."
+   },
+   "usage": {
+    "input_tokens": 703,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.21,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.58,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.18,
+      "2": 0.14,
+      "3": 0.68,
+      "4": 0.0
+     },
+     "score": 2.51,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.172,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, Happy with the product overall. Can I move from monthly to annual billing and keep my Starter discount? I am locked out and my client presentation starts in an hour."
+   },
+   "usage": {
+    "input_tokens": 699,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.97,
+     "probabilities": {
+      "account": 0.02,
+      "billing": 0.0,
+      "bug": 0.98,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.2,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.211,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, This is unacceptable and I am furious. Every comment sends two notification emails instead of one. Also, I want to rename our company on the account. Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 707,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.0,
+      "other": 1.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.05,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 0.0
+     },
+     "score": 3.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.02,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.175,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Thanks, I appreciate the help so far. Do you have a status page I can subscribe to? Whenever you get a chance."
+   },
+   "usage": {
+    "input_tokens": 689,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "bug",
+     "confidence": 0.77,
+     "probabilities": {
+      "account": 0.01,
+      "billing": 0.0,
+      "bug": 0.83,
+      "other": 0.16
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.97,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 1.0,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 1.0,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.39,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.177,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Hi, I am quite disappointed. The mobile app crashes when I open the profile screen. I want to speak to a manager."
+   },
+   "usage": {
+    "input_tokens": 689,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "other",
+     "confidence": 0.97,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 0.0,
+      "bug": 0.02,
+      "other": 0.98
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.1,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.65,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.68,
+      "2": 0.21,
+      "3": 0.1,
+      "4": 0.0
+     },
+     "score": 1.39,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.49,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.18,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Are you planning to add a dark mode? This has to be fixed today or we miss payroll. I spoke to a colleague who uses the product and she liked it."
+   },
+   "usage": {
+    "input_tokens": 697,
+    "output_tokens": 94
+   }
+  },
+  {
+   "answers": {
+    "category": {
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "account": 0.0,
+      "billing": 1.0,
+      "bug": 0.0,
+      "other": 0.0
+     },
+     "type": "choice"
+    },
+    "needs_human": {
+     "noul": 0.2,
+     "type": "noul"
+    },
+    "sentiment": {
+     "confidence": 0.88,
+     "legend": {
+      "0": "very negative: angry, furious or abusive",
+      "1": "negative: disappointed or frustrated",
+      "2": "neutral: matter of fact, no strong feeling",
+      "3": "positive: polite and appreciative",
+      "4": "very positive: enthusiastic or delighted"
+     },
+     "probabilities": {
+      "0": 0.14,
+      "1": 0.86,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "score": 0.86,
+     "type": "score"
+    },
+    "urgent": {
+     "noul": 0.97,
+     "type": "noul"
+    }
+   },
+   "latency_s": 0.23,
+   "questions": {
+    "category": {
+     "type": "choice"
+    },
+    "needs_human": {
+     "type": "noul"
+    },
+    "sentiment": {
+     "type": "score"
+    },
+    "urgent": {
+     "type": "noul"
+    }
+   },
+   "state": {
+    "ticket": "Good morning, This is really frustrating. I was billed for May after I cancelled the Pro plan. Also, the profile page loads forever on Safari. Production is down for all of our users right now."
+   },
+   "usage": {
+    "input_tokens": 704,
+    "output_tokens": 94
+   }
+  }
+ ]
+}
