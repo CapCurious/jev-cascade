@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased, 2026-10-18 (iteration 1 of the quality loop)
+
+- README cut from 2,398 to about 1,100 words: first screen leads with the stage-two-stronger check and its measured verdict; cost per 1,000 and 100,000 tickets with the stage-two assumption, and a "nothing to host" line; the Jev section is shared word for word with the sibling kits.
+- jev_client: HTTP 401 or 403 raises one clear line naming JEV_API_KEY and the console URL; `run` stops on the first auth error with exit 2.
+- Demo mode no longer answers an input that has no recording; it exits 2 with one line and no report.
+- Report: stage two reads "not metered (subscription)" instead of $0.0000.
+- Explainer: a "Repo on GitHub" link in the rail.
+- Gate: tests `OK (skipped=1)`, demo identical except the not-metered line, privacy grep all classes zero except the public origin remote, leakage scan 0 findings, scorecard 13 of 15 on the working tree before the last one-word trim.
+
 ## v4 (2026-10-18)
 
 Docs glosses from cold reads. No code changed.

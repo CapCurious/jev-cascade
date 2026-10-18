@@ -6,6 +6,8 @@ import shlex
 import sys
 import tempfile
 import unittest
+import urllib.error
+from unittest import mock
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -281,7 +283,7 @@ class ReportTests(unittest.TestCase):
         self.assertIn("escalated: 4 of 10 (40.0%); stage two ran on 4, skipped 0", out)
         self.assertIn("$0.0420", out)                                  # 1,000 tokens at $0.042 per million, per 1,000 items
         self.assertIn("stage one 0.20 s; stage two 5.00 s (4 items); end to end 0.20 s (90th percentile 6.20 s)", out)
-        self.assertIn("not metered here: subscription", out)
+        self.assertIn("stage two      not metered", out)
 
     def test_accuracy_math(self):
         out = self.text(hand_rows())
@@ -342,6 +344,42 @@ class DemoTests(unittest.TestCase):
             rows = jc.load_jsonl(path)
             self.assertEqual(len(rows), 5)
             self.assertIn("ran 5 items", out)
+
+    def test_demo_unrecorded_input_exits_two_without_stdout(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            items = os.path.join(tmp, "items.jsonl")
+            out = os.path.join(tmp, "out.jsonl")
+            with open(items, "w", encoding="utf-8") as fh:
+                fh.write('{"id": "new-1", "text": "unrecorded first input"}\n')
+                fh.write('{"id": "new-2", "text": "unrecorded second input"}\n')
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                code = jc.main(["--demo", "run", items,
+                                os.path.join(ROOT, "examples", "questions.json"),
+                                os.path.join(ROOT, "examples", "policy.json"), "--out", out])
+            self.assertEqual(code, 2)
+            self.assertEqual(stdout.getvalue(), "")
+            self.assertEqual(stderr.getvalue(), "error: no recorded answer for this input; demo mode "
+                             "replays the bundled examples only, run live with a key\n")
+
+    def test_live_http_401_exits_two_with_one_auth_error_line(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = os.path.join(tmp, "out.jsonl")
+            error = urllib.error.HTTPError(jev_client.API_URL, 401, "Unauthorized", {}, io.BytesIO())
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with mock.patch.dict(os.environ, {"JEV_API_KEY": "bad"}, clear=True), \
+                    mock.patch("urllib.request.urlopen", side_effect=error), \
+                    contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                code = jc.main(["run", os.path.join(ROOT, "examples", "tickets.jsonl"),
+                                os.path.join(ROOT, "examples", "questions.json"),
+                                os.path.join(ROOT, "examples", "policy.json"),
+                                "--limit", "1", "--out", out])
+            self.assertEqual(code, 2)
+            self.assertEqual(stdout.getvalue(), "")
+            self.assertEqual(len(stderr.getvalue().splitlines()), 1)
+            self.assertIn("JEV_API_KEY", stderr.getvalue())
+            self.assertIn("console.typesafe.ai/keys", stderr.getvalue())
+            self.assertNotIn("Traceback", stderr.getvalue())
 
     def test_report_on_the_committed_live_run(self):
         code, out = self.run_main(["report", os.path.join(ROOT, "examples", "run_live.jsonl")])

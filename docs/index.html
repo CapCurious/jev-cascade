@@ -111,6 +111,7 @@ code{font-family:var(--mono);font-size:.92em}
   <a href="#what">What Jev is</a>
   <a href="#rule">The cascade rule</a>
   <a href="#limits">The limits</a>
+  <a href="https://github.com/CapCurious/jev-cascade" rel="noopener" target="_blank">Repo on GitHub</a>
 </nav>
 <main>
 <section id="try" aria-labelledby="h-try">
@@ -279,7 +280,7 @@ if (typeof document !== "undefined") (function () {
   render(false);
 
   /* left rail: plain scroll listener, no IntersectionObserver */
-  var links = Array.prototype.slice.call(document.querySelectorAll(".rail a"));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[href^="#"]'));
   var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
   function mark() {
     var cur = 0;

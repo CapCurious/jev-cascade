@@ -14,6 +14,8 @@ stage two is actually stronger than stage one on the items it received.
 Standard library only, Python 3.10 or newer.
 """
 import argparse
+import contextlib
+import io
 import json
 import os
 import shlex
@@ -234,7 +236,9 @@ class ReplayLatency(object):
 def ask_stage_one(client, state, question_defs):
     try:
         return client.ask(state, question_defs)
-    except jev_client.JevError:
+    except jev_client.JevError as exc:
+        if exc.status in (401, 403):
+            raise
         time.sleep(1.0)
         return client.ask(state, question_defs)
 
@@ -365,8 +369,9 @@ def report_lines(rows, source="output"):
                len(escalated), n, 100.0 * len(escalated) / n if n else 0.0, len(ran), len(skipped), len(failed)),
            "", "cost           total       per 1,000 items",
            "stage one Jev  ${:.5f}    ${:.4f}".format(c1, per(c1)),
-           "stage two      ${:.5f}    ${:.4f}   ({})".format(
-               c2, per(c2), "not metered here: subscription" if note == "subscription" else note),
+           ("stage two      not metered            ({})".format("subscription")
+            if note == "subscription" else
+            "stage two      ${:.5f}    ${:.4f}   ({})".format(c2, per(c2), note)),
            "",
            "median latency: stage one {}; stage two {} ({} items); end to end {} (90th percentile {})".format(
                secs(median(r["latency_s"]["stage1"] for r in rows)),
@@ -450,23 +455,31 @@ def build_parser():
 
 def main(argv=None):
     args = build_parser().parse_args(argv)
-    if args.demo:
-        print(jev_client.DEMO_LABEL)
+    demo_stdout = io.StringIO() if args.demo else None
     try:
-        if args.cmd is None:
-            if not args.demo:
-                build_parser().print_help()
-                return 0
-            args = build_parser().parse_args(["--demo", "run"] + (["--model", args.model] if args.model else []))
-            out = cmd_run(args)
-            print()
-            return cmd_report(argparse.Namespace(path=out))
-        result = args.func(args)
+        with contextlib.redirect_stdout(demo_stdout) if demo_stdout else contextlib.nullcontext():
+            if args.demo:
+                print(jev_client.DEMO_LABEL)
+            if args.cmd is None:
+                if not args.demo:
+                    build_parser().print_help()
+                    return 0
+                args = build_parser().parse_args(["--demo", "run"] + (["--model", args.model] if args.model else []))
+                out = cmd_run(args)
+                print()
+                result = cmd_report(argparse.Namespace(path=out))
+            else:
+                result = args.func(args)
+        if demo_stdout:
+            sys.stdout.write(demo_stdout.getvalue())
         return result if isinstance(result, int) else 0
     except jev_client.JevKeyMissing as exc:
         print("error: {}".format(exc), file=sys.stderr)
         return 2
-    except (jev_client.JevError, FileNotFoundError, KeyError) as exc:
+    except jev_client.JevError as exc:
+        print("error: {}".format(exc), file=sys.stderr)
+        return 2 if exc.status in (401, 403) or args.demo else 1
+    except (FileNotFoundError, KeyError) as exc:
         print("error: {}".format(exc), file=sys.stderr)
         return 1
 
